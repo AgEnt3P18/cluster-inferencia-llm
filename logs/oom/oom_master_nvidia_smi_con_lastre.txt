@@ -1,0 +1,2 @@
+memory.used [MiB], memory.total [MiB]
+5143 MiB, 12288 MiB

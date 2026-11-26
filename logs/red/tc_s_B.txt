@@ -1,0 +1,16 @@
+--- master
+qdisc netem 8006: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit
+ Sent 125749453 bytes 92679 pkt (dropped 22, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+--- worker-1
+qdisc netem 8007: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit
+ Sent 126681480 bytes 92963 pkt (dropped 22, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+--- worker-2
+qdisc netem 8008: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit
+ Sent 0 bytes 0 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0
+--- worker-3
+qdisc netem 8009: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit
+ Sent 0 bytes 0 pkt (dropped 0, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0

@@ -1,0 +1,6 @@
+[ 2427.010968] Memory cgroup out of memory: Killed process 27822 (llama-cli) total-vm:8908696kB, anon-rss:4184500kB, file-rss:15516kB, shmem-rss:0kB, UID:0 pgtables:8412kB oom_score_adj:0
+[ 6090.151747] llama-cli invoked oom-killer: gfp_mask=0xcc0(GFP_KERNEL), order=0, oom_score_adj=0
+[ 6090.152594]  oom_kill_process+0x106/0x230
+[ 6090.158760] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[ 6090.158768] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=c68936fd777810d96923e43879ef8b877ef70fd1fe07cbbd4e0658c63b69dfe3,mems_allowed=0,oom_memcg=/docker/c68936fd777810d96923e43879ef8b877ef70fd1fe07cbbd4e0658c63b69dfe3,task_memcg=/docker/c68936fd777810d96923e43879ef8b877ef70fd1fe07cbbd4e0658c63b69dfe3,task=llama-cli,pid=2584,uid=0
+[ 6090.161058] Memory cgroup out of memory: Killed process 2584 (llama-cli) total-vm:8908696kB, anon-rss:4184772kB, file-rss:14728kB, shmem-rss:0kB, UID:0 pgtables:8404kB oom_score_adj:0

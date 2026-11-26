@@ -1,0 +1,50 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.1
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+[start_master] 2026-11-26T08:33:58.945720776Z TS=1,5 CTX=4096 KVT=q8_0 PARALLEL=1 RPC=10.0.50.12:50052 NETEM=none
+[start_master] llama.cpp commit: b1b770d90d94cad9e9ea5b993bdbc383a522fb28
+0.00.144.026 I srv  llama_server: initializing ...
+0.00.144.058 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.144.400 W srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.146.866 I srv    load_model: loading model '/models/qwen2.5-7b-instruct-q8_0.gguf'
+0.00.457.421 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.03.474.235 I cmn          init: llama threadpool init, n_threads = 6
+0.03.654.388 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+0.03.657.947 I srv  server_run_i: model loaded
+0.03.657.974 I srv  server_on_li: listening on http://0.0.0.0:8080
+0.05.166.029 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+0.05.166.092 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.14.967.789 I slot print_timing: id  0 | task 0 | n_gen =    100, tg =  16.57 t/s, tg_3s =  16.74 t/s
+0.18.027.247 I slot print_timing: id  0 | task 0 | n_gen =    151, tg =  16.61 t/s, tg_3s =  16.67 t/s
+0.21.048.921 I slot print_timing: id  0 | task 0 | n_gen =    201, tg =  16.59 t/s, tg_3s =  16.55 t/s
+0.24.060.210 I slot print_timing: id  0 | task 0 | n_gen =    251, tg =  16.59 t/s, tg_3s =  16.60 t/s
+0.27.013.125 I slot print_timing: id  0 | task 0 | prompt eval time =    3830.13 ms /   391 tokens (    9.80 ms per token,   102.09 tokens per second)
+0.27.013.150 I slot print_timing: id  0 | task 0 |        eval time =   18018.23 ms /   300 tokens (   60.26 ms per token,    16.59 tokens per second)
+0.27.013.151 I slot print_timing: id  0 | task 0 |       total time =   21848.36 ms /   691 tokens
+0.27.013.158 I slot print_timing: id  0 | task 0 |    graphs reused =        298
+0.27.013.159 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.27.013.217 I slot      release: id  0 | task 0 | stop processing: n_tokens = 690, truncated = 0
+0.27.314.680 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 1.000 (> 0.100 thold), f_keep = 0.567
+0.27.314.734 I slot launch_slot_: id  0 | task 301 | processing task, is_child = 0
+0.36.923.640 I slot print_timing: id  0 | task 301 | n_gen =    100, tg =  16.63 t/s, tg_3s =  16.80 t/s
+0.39.963.015 I slot print_timing: id  0 | task 301 | n_gen =    151, tg =  16.68 t/s, tg_3s =  16.78 t/s
+0.42.985.529 I slot print_timing: id  0 | task 301 | n_gen =    201, tg =  16.64 t/s, tg_3s =  16.54 t/s
+0.46.009.460 I slot print_timing: id  0 | task 301 | n_gen =    251, tg =  16.62 t/s, tg_3s =  16.53 t/s
+0.49.046.641 I slot print_timing: id  0 | task 301 | prompt eval time =    3655.16 ms /   391 tokens (    9.35 ms per token,   106.97 tokens per second)
+0.49.046.661 I slot print_timing: id  0 | task 301 |        eval time =   18077.91 ms /   300 tokens (   60.46 ms per token,    16.54 tokens per second)
+0.49.046.662 I slot print_timing: id  0 | task 301 |       total time =   21733.07 ms /   691 tokens
+0.49.046.663 I slot print_timing: id  0 | task 301 |    graphs reused =        595
+0.49.046.663 I slot print_timing: id  0 | task 301 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.49.046.705 I slot      release: id  0 | task 301 | stop processing: n_tokens = 690, truncated = 0

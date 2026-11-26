@@ -1,0 +1,266 @@
+{
+  "C1": {
+    "nodos": [
+      {
+        "nodo": "master (VRAM)",
+        "pesos": 1969.36,
+        "kv": 24.0,
+        "act": 168.04,
+        "runtime": 0,
+        "limite": 8192,
+        "medido": 2126.0,
+        "libre": 6030.6
+      },
+      {
+        "nodo": "worker-1 (RAM)",
+        "pesos": 1889.48,
+        "kv": 32.0,
+        "act": 231.05,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 1947.84375,
+        "libre": 1943.4699999999998
+      },
+      {
+        "nodo": "worker-2 (RAM)",
+        "pesos": 1653.3,
+        "kv": 28.0,
+        "act": 168.04,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 1706.6953125,
+        "libre": 2246.66
+      },
+      {
+        "nodo": "worker-3 (RAM)",
+        "pesos": 1653.3,
+        "kv": 28.0,
+        "act": 168.04,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 1707.23828125,
+        "libre": 2246.66
+      }
+    ],
+    "master_cpu": {
+      "model": 552.23,
+      "output": 0.58,
+      "compute": 78.07
+    }
+  },
+  "C2": {
+    "nodos": [
+      {
+        "nodo": "master (VRAM)",
+        "pesos": 1969.36,
+        "kv": 48.0,
+        "act": 176.04,
+        "runtime": 0,
+        "limite": 8192,
+        "medido": 2165.0,
+        "libre": 5998.6
+      },
+      {
+        "nodo": "worker-1 (RAM)",
+        "pesos": 1889.48,
+        "kv": 64.0,
+        "act": 239.05,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 1979.8828125,
+        "libre": 1903.4699999999998
+      },
+      {
+        "nodo": "worker-2 (RAM)",
+        "pesos": 1653.3,
+        "kv": 56.0,
+        "act": 176.04,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 1734.671875,
+        "libre": 2210.66
+      },
+      {
+        "nodo": "worker-3 (RAM)",
+        "pesos": 1653.3,
+        "kv": 56.0,
+        "act": 176.04,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 1735.3515625,
+        "libre": 2210.66
+      }
+    ],
+    "master_cpu": {
+      "model": 552.23,
+      "output": 0.58,
+      "compute": 86.07
+    }
+  },
+  "C3": {
+    "nodos": [
+      {
+        "nodo": "master (VRAM)",
+        "pesos": 3622.66,
+        "kv": 52.0,
+        "act": 168.04,
+        "runtime": 0,
+        "limite": 8192,
+        "medido": 3823.0,
+        "libre": 4349.3
+      },
+      {
+        "nodo": "worker-1 (RAM)",
+        "pesos": 1889.48,
+        "kv": 32.0,
+        "act": 231.05,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 1947.74609375,
+        "libre": 1943.4699999999998
+      },
+      {
+        "nodo": "worker-2 (RAM)",
+        "pesos": 1653.3,
+        "kv": 28.0,
+        "act": 168.04,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 1707.0078125,
+        "libre": 2246.66
+      }
+    ],
+    "master_cpu": {
+      "model": 552.23,
+      "output": 0.58,
+      "compute": 78.07
+    }
+  },
+  "C4": {
+    "nodos": [
+      {
+        "nodo": "master (VRAM)",
+        "pesos": 2914.1,
+        "kv": 42.5,
+        "act": 176.82,
+        "runtime": 0,
+        "limite": 8192,
+        "medido": 3114.0,
+        "libre": 5058.58
+      },
+      {
+        "nodo": "worker-1 (RAM)",
+        "pesos": 1417.11,
+        "kv": 25.5,
+        "act": 232.52,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 1467.5546875,
+        "libre": 2420.87
+      },
+      {
+        "nodo": "worker-2 (RAM)",
+        "pesos": 1417.11,
+        "kv": 25.5,
+        "act": 169.51,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 1468.14453125,
+        "libre": 2483.88
+      },
+      {
+        "nodo": "worker-3 (RAM)",
+        "pesos": 1417.11,
+        "kv": 25.5,
+        "act": 169.51,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 1468.078125,
+        "libre": 2483.88
+      }
+    ],
+    "master_cpu": {
+      "model": 552.23,
+      "output": 0.58,
+      "compute": 86.07
+    }
+  },
+  "C5": {
+    "nodos": [
+      {
+        "nodo": "master (VRAM)",
+        "pesos": 5039.77,
+        "kv": 80.75,
+        "act": 177.51999999999998,
+        "runtime": 0,
+        "limite": 8192,
+        "medido": 5283.0,
+        "libre": 2893.959999999999
+      },
+      {
+        "nodo": "worker-1 (RAM)",
+        "pesos": 708.56,
+        "kv": 12.75,
+        "act": 232.28,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 745.01171875,
+        "libre": 3142.41
+      },
+      {
+        "nodo": "worker-2 (RAM)",
+        "pesos": 708.56,
+        "kv": 12.75,
+        "act": 169.26999999999998,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 744.4765625,
+        "libre": 3205.42
+      },
+      {
+        "nodo": "worker-3 (RAM)",
+        "pesos": 708.56,
+        "kv": 12.75,
+        "act": 169.26999999999998,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 745.18359375,
+        "libre": 3205.42
+      }
+    ],
+    "master_cpu": {
+      "model": 552.23,
+      "output": 0.58,
+      "compute": 86.07
+    }
+  },
+  "C6": {
+    "nodos": [
+      {
+        "nodo": "master (VRAM)",
+        "pesos": 5984.52,
+        "kv": 97.75,
+        "act": 177.84,
+        "runtime": 133.88999999999942,
+        "limite": 8192,
+        "medido": 6394.0,
+        "libre": 1798.0
+      },
+      {
+        "nodo": "worker-1 (RAM)",
+        "pesos": 1180.93,
+        "kv": 21.25,
+        "act": 232.44,
+        "runtime": 0,
+        "limite": 4096,
+        "medido": 1226.921875,
+        "libre": 2661.38
+      }
+    ],
+    "master_cpu": {
+      "model": 552.23,
+      "output": 0.58,
+      "compute": 86.07
+    }
+  }
+}

@@ -1,0 +1,3 @@
+{"test":"cpu_stream","threads":4,"array_MiB":512,"read_GBps":36.86,"triad_GBps":26.31,"sink":402653191}
+{"test":"cpu_stream","threads":1,"array_MiB":512,"read_GBps":10.99,"triad_GBps":23.56,"sink":402653191}
+{"test":"cpu_stream","threads":12,"array_MiB":512,"read_GBps":33.83,"triad_GBps":21.70,"sink":402653191}

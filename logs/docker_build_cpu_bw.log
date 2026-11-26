@@ -1,0 +1,84 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.10kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/nvidia/cuda:12.4.1-runtime-ubuntu22.04
+#2 ...
+
+#3 [internal] load metadata for docker.io/nvidia/cuda:12.4.1-devel-ubuntu22.04
+#3 DONE 0.2s
+
+#2 [internal] load metadata for docker.io/nvidia/cuda:12.4.1-runtime-ubuntu22.04
+#2 DONE 0.3s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [stage-1 1/8] FROM docker.io/nvidia/cuda:12.4.1-runtime-ubuntu22.04@sha256:517da2300c184c9999ec203c2665244bdebd3578d12fcc7065e83667932643d9
+#5 resolve docker.io/nvidia/cuda:12.4.1-runtime-ubuntu22.04@sha256:517da2300c184c9999ec203c2665244bdebd3578d12fcc7065e83667932643d9 0.0s done
+#5 DONE 0.0s
+
+#6 [build 1/8] FROM docker.io/nvidia/cuda:12.4.1-devel-ubuntu22.04@sha256:da6791294b0b04d7e65d87b7451d6f2390b4d36225ab0701ee7dfec5769829f5
+#6 resolve docker.io/nvidia/cuda:12.4.1-devel-ubuntu22.04@sha256:da6791294b0b04d7e65d87b7451d6f2390b4d36225ab0701ee7dfec5769829f5 0.0s done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 150B done
+#7 DONE 0.0s
+
+#8 [build 6/8] RUN cmake -B build -DGGML_CUDA=ON -DGGML_RPC=ON -DGGML_NATIVE=OFF         -DGGML_BACKEND_DL=ON -DGGML_CPU_ALL_VARIANTS=ON         -DLLAMA_BUILD_TESTS=OFF -DLLAMA_BUILD_EXAMPLES=OFF         -DCMAKE_CUDA_ARCHITECTURES=86 -DLLAMA_CURL=OFF -DCMAKE_BUILD_TYPE=Release         -DCMAKE_EXE_LINKER_FLAGS=-Wl,--allow-shlib-undefined     && cmake --build build -j 12     && git rev-parse HEAD > /src/LLAMA_COMMIT
+#8 CACHED
+
+#9 [build 2/8] RUN apt-get update && apt-get install -y --no-install-recommends         git cmake build-essential ca-certificates libcurl4-openssl-dev     && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [build 3/8] WORKDIR /src
+#10 CACHED
+
+#11 [build 4/8] RUN git clone https://github.com/ggml-org/llama.cpp.git && cd llama.cpp && git checkout b1b770d90d94cad9e9ea5b993bdbc383a522fb28
+#11 CACHED
+
+#12 [build 5/8] WORKDIR /src/llama.cpp
+#12 CACHED
+
+#13 [build 7/8] COPY gpu_bw.cu vram_ballast.cu cpu_bw.c /src/
+#13 CACHED
+
+#14 [build 8/8] RUN nvcc -O3 -arch=sm_86 -o /src/gpu_bw /src/gpu_bw.cu && nvcc -O3 -arch=sm_86 -o /src/vram_ballast /src/vram_ballast.cu     && gcc -O3 -march=x86-64-v3 -fopenmp -o /src/cpu_bw /src/cpu_bw.c
+#14 DONE 1.9s
+
+#15 [stage-1 2/8] RUN apt-get update && apt-get install -y --no-install-recommends         iproute2 iputils-ping iperf3 curl jq python3 procps libgomp1 ca-certificates sysbench     && rm -rf /var/lib/apt/lists/*
+#15 CACHED
+
+#16 [stage-1 3/8] COPY --from=build /src/llama.cpp/build/bin/ /opt/llama/bin/
+#16 CACHED
+
+#17 [stage-1 4/8] COPY --from=build /src/LLAMA_COMMIT /opt/llama/LLAMA_COMMIT
+#17 CACHED
+
+#18 [stage-1 5/8] COPY --from=build /src/gpu_bw /src/vram_ballast /src/cpu_bw /opt/llama/bin/
+#18 DONE 0.0s
+
+#19 [stage-1 6/8] COPY tc.sh netstats.sh /opt/cluster/
+#19 DONE 0.0s
+
+#20 [stage-1 7/8] RUN chmod +x /opt/cluster/*.sh && ln -s /opt/llama/bin/ggml-rpc-server /opt/llama/bin/rpc-server
+#20 DONE 0.2s
+
+#21 [stage-1 8/8] WORKDIR /work
+#21 DONE 0.0s
+
+#22 exporting to image
+#22 exporting layers 0.1s done
+#22 exporting manifest sha256:240980107ab4212072f8b7bccb4b40770231013047c9632b2e1f8835f99381e8 done
+#22 exporting config sha256:33bc2653f12a00ea6d363318a59d8e2927e9fb2826757b0efeee231a0221659a done
+#22 exporting attestation manifest sha256:b9bfd8f0ab708d8bb442861195bd561a48a29a12e74cefb49baaeb984417f0de 0.0s done
+#22 exporting manifest list sha256:e0d638ea25f1c7acef59de4d0b7a40dbd24423579fc0450669cf8687b73ad99e done
+#22 naming to docker.io/library/cluster-llm:latest done
+#22 unpacking to docker.io/library/cluster-llm:latest 0.1s done
+#22 DONE 0.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/w8zwwi83tfvr9dke71yx6e8k8

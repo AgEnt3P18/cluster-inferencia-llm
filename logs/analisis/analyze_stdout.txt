@@ -1,0 +1,49 @@
+C1-A: TTFT 13.61±0.10s  tg 5.46 tok/s  TPOT 183 ms  pp 28.7  net 67.8 MB  drops 0  RAMw 2.04  VRAM 2900  SLO False
+C1-B: TTFT 17.54±0.16s  tg 4.48 tok/s  TPOT 223 ms  pp 22.3  net 66.9 MB  drops 21  RAMw 2.04  VRAM 2905  SLO False
+C2-A: TTFT 14.15±0.31s  tg 5.04 tok/s  TPOT 198 ms  pp 27.6  net 67.8 MB  drops 0  RAMw 2.08  VRAM 2939  SLO False
+C2-B: TTFT 17.16±0.19s  tg 4.51 tok/s  TPOT 222 ms  pp 22.8  net 66.9 MB  drops 14  RAMw 2.08  VRAM 2948  SLO False
+C3-A: TTFT 9.82±0.22s  tg 6.95 tok/s  TPOT 144 ms  pp 39.8  net 45.2 MB  drops 0  RAMw 2.04  VRAM 4597  SLO False
+C3-B: TTFT 11.68±0.11s  tg 6.41 tok/s  TPOT 156 ms  pp 33.5  net 45.0 MB  drops 19  RAMw 2.04  VRAM 4590  SLO False
+C4-A: TTFT 12.33±0.10s  tg 5.91 tok/s  TPOT 169 ms  pp 31.7  net 67.8 MB  drops 0  RAMw 1.56  VRAM 3888  SLO False
+C4-B: TTFT 15.47±0.38s  tg 5.23 tok/s  TPOT 191 ms  pp 25.3  net 67.6 MB  drops 25  RAMw 1.56  VRAM 3889  SLO False
+C5-A: TTFT 6.46±0.16s  tg 9.74 tok/s  TPOT 103 ms  pp 60.5  net 66.7 MB  drops 0  RAMw 0.85  VRAM 6057  SLO False
+C5-B: TTFT 9.41±0.16s  tg 8.29 tok/s  TPOT 121 ms  pp 41.6  net 66.8 MB  drops 26  RAMw 0.85  VRAM 6108  SLO False
+C6-A: TTFT 3.83±0.09s  tg 16.06 tok/s  TPOT 62 ms  pp 102.2  net 22.4 MB  drops 0  RAMw 1.32  VRAM 7168  SLO True
+C6-B: TTFT 4.62±0.05s  tg 14.78 tok/s  TPOT 68 ms  pp 84.7  net 22.3 MB  drops 7  RAMw 1.32  VRAM 7167  SLO True
+ganadora: C6
+roofline C1: techo 6.45 tok/s  eta_A 0.85  eta_B 0.70  etapas {'master_gpu': 6.621720384069551, 'worker-1': 53.99151178730331, 'worker-2': 47.24271505154639, 'worker-3': 47.24271505154639}
+roofline C2: techo 6.45 tok/s  eta_A 0.78  eta_B 0.70  etapas {'master_gpu': 6.621720384069551, 'worker-1': 53.99151178730331, 'worker-2': 47.24271505154639, 'worker-3': 47.24271505154639}
+roofline C3: techo 8.82 tok/s  eta_A 0.79  eta_B 0.73  etapas {'master_gpu': 12.187681123058237, 'worker-1': 53.99151178730331, 'worker-2': 47.24271505154639}
+roofline C4: techo 7.63 tok/s  eta_A 0.77  eta_B 0.68  etapas {'master_gpu': 9.78565940548488, 'worker-1': 40.409093417254475, 'worker-2': 40.409093417254475, 'worker-3': 40.409093417254475}
+roofline C5: techo 12.90 tok/s  eta_A 0.76  eta_B 0.64  etapas {'master_gpu': 16.926949496643868, 'worker-1': 20.20468894628323, 'worker-2': 20.20468894628323, 'worker-3': 20.20468894628323}
+roofline C6: techo 18.60 tok/s  eta_A 0.86  eta_B 0.79  etapas {'master_gpu': 20.100882271687016, 'worker-1': 33.67438675203473}
+GPU1 {'techo_tok_s': 38.63172526994268, 'medido': 37.04988264852387, 'eta': 0.9590532752455259}
+concurrencia {
+ "1": {
+  "usuarios": 1,
+  "tok_s_agregado": 13.802218020869192,
+  "tok_s_por_usuario_med": 16.539524374169844,
+  "ttft_max_s": 3.6587305068969727,
+  "ttft_med_s": 3.6587305068969727,
+  "tpot_max_ms": 60.46123076923077,
+  "wall_s": 21.735636949539185
+ },
+ "2": {
+  "usuarios": 2,
+  "tok_s_agregado": 22.508408782108045,
+  "tok_s_por_usuario_med": 15.06276437336269,
+  "ttft_max_s": 6.807760953903198,
+  "ttft_med_s": 6.807365894317627,
+  "tpot_max_ms": 66.38923411371239,
+  "wall_s": 26.656704425811768
+ },
+ "4": {
+  "usuarios": 4,
+  "tok_s_agregado": 31.481992183289176,
+  "tok_s_por_usuario_med": 10.888613899895105,
+  "ttft_max_s": 13.59773850440979,
+  "ttft_med_s": 10.211101651191711,
+  "tpot_max_ms": 104.36171906354515,
+  "wall_s": 38.11702871322632
+ }
+}

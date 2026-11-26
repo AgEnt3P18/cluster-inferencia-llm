@@ -1,0 +1,128 @@
+[
+  {
+    "config": "C1",
+    "scenario": "A",
+    "run": "C1-A",
+    "load_s": 35.34127497673035,
+    "load_netem": "none",
+    "ttft_primera_s": 13.655953168869019,
+    "ttft_warm_s": 13.605477571487427
+  },
+  {
+    "config": "C1",
+    "scenario": "B",
+    "run": "C1-B",
+    "load_s": 18.03016209602356,
+    "load_netem": "none",
+    "ttft_primera_s": 16.75204038619995,
+    "ttft_warm_s": 17.53610587120056
+  },
+  {
+    "config": "C2",
+    "scenario": "A",
+    "run": "C2-A",
+    "load_s": 17.78996467590332,
+    "load_netem": "none",
+    "ttft_primera_s": 14.342301368713379,
+    "ttft_warm_s": 14.150737047195435
+  },
+  {
+    "config": "C2",
+    "scenario": "B",
+    "run": "C2-B",
+    "load_s": 16.392467975616455,
+    "load_netem": "none",
+    "ttft_primera_s": 17.39800190925598,
+    "ttft_warm_s": 17.161449909210205
+  },
+  {
+    "config": "C3",
+    "scenario": "A",
+    "run": "C3-A",
+    "load_s": 15.361502170562744,
+    "load_netem": "none",
+    "ttft_primera_s": 9.6283700466156,
+    "ttft_warm_s": 9.817956686019897
+  },
+  {
+    "config": "C3",
+    "scenario": "B",
+    "run": "C3-B",
+    "load_s": 15.258714199066162,
+    "load_netem": "none",
+    "ttft_primera_s": 11.697690486907959,
+    "ttft_warm_s": 11.675703525543213
+  },
+  {
+    "config": "C4",
+    "scenario": "A",
+    "run": "C4-A",
+    "load_s": 15.361019372940063,
+    "load_netem": "none",
+    "ttft_primera_s": 12.54208755493164,
+    "ttft_warm_s": 12.326723575592041
+  },
+  {
+    "config": "C4",
+    "scenario": "B",
+    "run": "C4-B",
+    "load_s": 16.92055058479309,
+    "load_netem": "none",
+    "ttft_primera_s": 15.326892852783203,
+    "ttft_warm_s": 15.467232465744019
+  },
+  {
+    "config": "C5",
+    "scenario": "A",
+    "run": "C5-A",
+    "load_s": 11.71612811088562,
+    "load_netem": "none",
+    "ttft_primera_s": 6.783262729644775,
+    "ttft_warm_s": 6.461631774902344
+  },
+  {
+    "config": "C5",
+    "scenario": "B",
+    "run": "C5-B",
+    "load_s": 13.300556182861328,
+    "load_netem": "none",
+    "ttft_primera_s": 9.72913146018982,
+    "ttft_warm_s": 9.411182165145874
+  },
+  {
+    "config": "C6",
+    "scenario": "A",
+    "run": "C6-A",
+    "load_s": 11.236671924591064,
+    "load_netem": "none",
+    "ttft_primera_s": 3.849637985229492,
+    "ttft_warm_s": 3.826033353805542
+  },
+  {
+    "config": "C6",
+    "scenario": "B",
+    "run": "C6-B-coldload",
+    "load_s": 110.6694848537445,
+    "load_netem": "B",
+    "ttft_primera_s": 4.680570125579834,
+    "ttft_warm_s": 4.61876654624939
+  },
+  {
+    "config": "C6",
+    "scenario": "B",
+    "run": "C6-B",
+    "load_s": 12.6353440284729,
+    "load_netem": "none",
+    "ttft_primera_s": 4.680570125579834,
+    "ttft_warm_s": 4.61876654624939
+  },
+  {
+    "config": "GPU1",
+    "scenario": "A",
+    "run": "GPU1",
+    "load_s": 6.859570741653442,
+    "load_netem": "none",
+    "ttft_primera_s": 0.3861730098724365,
+    "ttft_warm_s": 0.18590164184570312
+  }
+]

@@ -1,0 +1,1 @@
+docker run --name oom-master --gpus all --memory 16g --memory-swap 16g -v llm_models:/models:ro cluster-llm:latest llama-cli -m /models/qwen2.5-7b-instruct-q8_0.gguf --n-gpu-layers 99 --fit off -lm none -c 4096 -p "Hola" -n 16

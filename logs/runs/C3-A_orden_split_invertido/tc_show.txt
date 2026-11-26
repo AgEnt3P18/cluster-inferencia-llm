@@ -1,0 +1,8 @@
+--- master
+qdisc netem 801e: root refcnt 13 limit 1000 delay 499us rate 1Gbit
+--- worker-1
+qdisc netem 801f: root refcnt 13 limit 1000 delay 499us rate 1Gbit
+--- worker-2
+qdisc netem 8020: root refcnt 13 limit 1000 delay 499us rate 1Gbit
+--- worker-3
+qdisc netem 8021: root refcnt 13 limit 1000 delay 499us rate 1Gbit

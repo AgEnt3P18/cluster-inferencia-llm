@@ -1,0 +1,4 @@
+qdisc netem 8006: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit
+qdisc netem 8007: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit
+qdisc netem 8008: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit
+qdisc netem 8009: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit

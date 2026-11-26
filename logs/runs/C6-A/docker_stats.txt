@@ -1,0 +1,7 @@
+CONTAINER ID   NAME            CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O        PIDS
+b53334acd5f2   master          5.64%     1.032GiB / 16GiB      6.45%     41.4MB / 1.29GB   8.34GB / 0B      22
+3494f0a4fb86   worker-1        1.20%     1.332GiB / 4GiB       33.29%    1.29GB / 41.4MB   22.8MB / 0B      6
+9c32205ee2ad   worker-2        1.29%     7.145MiB / 4GiB       0.17%     1.95kB / 126B     33.7MB / 0B      3
+7f90e13e20e6   worker-3        1.66%     6.52MiB / 4GiB        0.16%     2.12kB / 126B     27.7MB / 0B      3
+cf0d6345505e   glpi_app        0.00%     77.41MiB / 27.41GiB   0.28%     2.94kB / 122kB    1.16GB / 164kB   9
+e7bf89d34846   glpi_database   0.01%     96.28MiB / 27.41GiB   0.34%     1.88kB / 126B     54.7MB / 4.1kB   9

@@ -1,0 +1,3 @@
+qdisc netem 803e: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit
+ Sent 50635684 bytes 62324 pkt (dropped 31, overlimits 0 requeues 0) 
+ backlog 0b 0p requeues 0

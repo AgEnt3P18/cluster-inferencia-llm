@@ -1,0 +1,17 @@
+exit code: 137
+OOMKilled=true ExitCode=137 Memory=4294967296
+{"test":"gpu_d2d_copy","bytes":1073741824,"iters":20,"ms":137.283,"GBps":312.86}
+65536.00 MiB transferred (173680.66 MiB/sec)
+GPU1-warmup: TTFT=0.386s pp=1022.4 tok/s tg=37.02 tok/s TPOT=27.0 ms net_tx=0 rx=0
+GPU1-r1: TTFT=0.185s pp=2158.4 tok/s tg=37.17 tok/s TPOT=26.9 ms net_tx=0 rx=0
+GPU1-r2: TTFT=0.188s pp=2120.4 tok/s tg=37.04 tok/s TPOT=27.0 ms net_tx=0 rx=0
+GPU1-r3: TTFT=0.186s pp=2141.8 tok/s tg=37.05 tok/s TPOT=27.0 ms net_tx=0 rx=0
+C6-par1-u1: TTFT=3.659s pp=107.0 tok/s tg=16.54 tok/s TPOT=60.5 ms net_tx=12223652 rx=10120158
+C6-par2-u1: TTFT=6.807s pp=57.5 tok/s tg=15.06 tok/s TPOT=66.4 ms net_tx=22809428 rx=20090308
+C6-par2-u2: TTFT=6.808s pp=57.5 tok/s tg=15.06 tok/s TPOT=66.4 ms net_tx=22809428 rx=20090308
+C6-par4-u2: TTFT=6.825s pp=57.3 tok/s tg=9.58 tok/s TPOT=104.4 ms net_tx=44464543 rx=39747124
+C6-par4-u3: TTFT=6.824s pp=57.3 tok/s tg=9.58 tok/s TPOT=104.4 ms net_tx=44464543 rx=39747124
+C6-par4-u4: TTFT=13.598s pp=57.7 tok/s tg=12.20 tok/s TPOT=82.0 ms net_tx=44603244 rx=39776810
+C6-par4-u1: TTFT=13.597s pp=57.7 tok/s tg=12.20 tok/s TPOT=82.0 ms net_tx=44603244 rx=39776810
+{"config":"C6","scenario":"B","load_netem":"B","t_up":1795682230.6719637,"t_ready":1795682341.3414485,"load_s":110.6694848537445}
+fin-extras

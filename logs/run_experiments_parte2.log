@@ -1,0 +1,49 @@
+=== C3 escenario A  TS=4,4,8 CTX=2048 KVT=f16 ===
+{"config":"C3","scenario":"A","load_netem":"none","t_up":1795680173.7655888,"t_ready":1795680189.127091,"load_s":15.361502170562744}
+C3-A-warmup: TTFT=9.628s pp=40.6 tok/s tg=6.06 tok/s TPOT=164.9 ms net_tx=24578142 rx=20628710
+C3-A-r1: TTFT=9.517s pp=41.1 tok/s tg=6.74 tok/s TPOT=148.3 ms net_tx=24556087 rx=20625402
+C3-A-r2: TTFT=9.947s pp=39.3 tok/s tg=6.95 tok/s TPOT=143.9 ms net_tx=24554754 rx=20626908
+C3-A-r3: TTFT=9.818s pp=39.8 tok/s tg=6.98 tok/s TPOT=143.3 ms net_tx=24554198 rx=20627862
+=== C3 escenario B  TS=4,4,8 CTX=2048 KVT=f16 ===
+{"config":"C3","scenario":"B","load_netem":"none","t_up":1795680427.532246,"t_ready":1795680442.7909603,"load_s":15.258714199066162}
+C3-B-warmup: TTFT=11.698s pp=33.4 tok/s tg=6.39 tok/s TPOT=156.5 ms net_tx=24536360 rx=20494352
+C3-B-r1: TTFT=11.676s pp=33.5 tok/s tg=6.41 tok/s TPOT=156.1 ms net_tx=24504430 rx=20482050
+C3-B-r2: TTFT=11.624s pp=33.6 tok/s tg=6.42 tok/s TPOT=155.9 ms net_tx=24558622 rx=20556174
+C3-B-r3: TTFT=11.848s pp=33.0 tok/s tg=6.39 tok/s TPOT=156.6 ms net_tx=24515028 rx=20494654
+=== C4 escenario A  TS=4,4,4,8 CTX=4096 KVT=q8_0 ===
+{"config":"C4","scenario":"A","load_netem":"none","t_up":1795680696.354309,"t_ready":1795680711.7153285,"load_s":15.361019372940063}
+C4-A-warmup: TTFT=12.542s pp=31.2 tok/s tg=5.92 tok/s TPOT=168.9 ms net_tx=36954256 rx=30934974
+C4-A-r1: TTFT=12.327s pp=31.7 tok/s tg=5.91 tok/s TPOT=169.3 ms net_tx=36874382 rx=30929202
+C4-A-r2: TTFT=12.213s pp=32.0 tok/s tg=5.93 tok/s TPOT=168.7 ms net_tx=36873792 rx=30933408
+C4-A-r3: TTFT=12.404s pp=31.5 tok/s tg=5.91 tok/s TPOT=169.2 ms net_tx=36897531 rx=30936642
+=== C4 escenario B  TS=4,4,4,8 CTX=4096 KVT=q8_0 ===
+{"config":"C4","scenario":"B","load_netem":"none","t_up":1795680983.1203172,"t_ready":1795681000.0408678,"load_s":16.92055058479309}
+C4-B-warmup: TTFT=15.327s pp=25.5 tok/s tg=5.18 tok/s TPOT=193.2 ms net_tx=36945514 rx=30786450
+C4-B-r1: TTFT=15.660s pp=25.0 tok/s tg=5.25 tok/s TPOT=190.5 ms net_tx=36857844 rx=30750482
+C4-B-r2: TTFT=14.903s pp=26.2 tok/s tg=5.23 tok/s TPOT=191.4 ms net_tx=36852116 rx=30786256
+C4-B-r3: TTFT=15.467s pp=25.3 tok/s tg=5.06 tok/s TPOT=197.6 ms net_tx=36857608 rx=30815138
+=== C5 escenario A  TS=1,1,1,7 CTX=4096 KVT=q8_0 ===
+{"config":"C5","scenario":"A","load_netem":"none","t_up":1795681312.6410267,"t_ready":1795681324.3571548,"load_s":11.71612811088562}
+C5-A-warmup: TTFT=6.783s pp=57.7 tok/s tg=9.78 tok/s TPOT=102.2 ms net_tx=36452564 rx=30301812
+C5-A-r1: TTFT=6.462s pp=60.5 tok/s tg=9.75 tok/s TPOT=102.6 ms net_tx=36363710 rx=30290952
+C5-A-r2: TTFT=6.409s pp=61.0 tok/s tg=9.73 tok/s TPOT=102.8 ms net_tx=36364599 rx=30297444
+C5-A-r3: TTFT=6.729s pp=58.1 tok/s tg=9.74 tok/s TPOT=102.7 ms net_tx=36364220 rx=30288468
+=== C5 escenario B  TS=1,1,1,7 CTX=4096 KVT=q8_0 ===
+{"config":"C5","scenario":"B","load_netem":"none","t_up":1795681493.1048625,"t_ready":1795681506.4054186,"load_s":13.300556182861328}
+C5-B-warmup: TTFT=9.729s pp=40.2 tok/s tg=8.20 tok/s TPOT=121.9 ms net_tx=36363528 rx=30558762
+C5-B-r1: TTFT=9.411s pp=41.6 tok/s tg=8.25 tok/s TPOT=121.2 ms net_tx=36267834 rx=30532696
+C5-B-r2: TTFT=9.241s pp=42.3 tok/s tg=8.33 tok/s TPOT=120.1 ms net_tx=36234585 rx=30505530
+C5-B-r3: TTFT=9.562s pp=40.9 tok/s tg=8.29 tok/s TPOT=120.6 ms net_tx=36235019 rx=30534828
+=== C6 escenario A  TS=1,5 CTX=4096 KVT=q8_0 ===
+{"config":"C6","scenario":"A","load_netem":"none","t_up":1795681709.3884258,"t_ready":1795681720.6250978,"load_s":11.236671924591064}
+C6-A-warmup: TTFT=3.850s pp=101.7 tok/s tg=16.13 tok/s TPOT=62.0 ms net_tx=12252774 rx=10152362
+C6-A-r1: TTFT=3.826s pp=102.2 tok/s tg=16.30 tok/s TPOT=61.4 ms net_tx=12224180 rx=10135932
+C6-A-r2: TTFT=3.704s pp=105.7 tok/s tg=16.06 tok/s TPOT=62.3 ms net_tx=12225390 rx=10154976
+C6-A-r3: TTFT=3.885s pp=100.7 tok/s tg=14.97 tok/s TPOT=66.8 ms net_tx=12224594 rx=10192824
+=== C6 escenario B  TS=1,5 CTX=4096 KVT=q8_0 ===
+{"config":"C6","scenario":"B","load_netem":"none","t_up":1795681831.447299,"t_ready":1795681844.082643,"load_s":12.6353440284729}
+C6-B-warmup: TTFT=4.681s pp=83.7 tok/s tg=14.67 tok/s TPOT=68.1 ms net_tx=12216846 rx=10112188
+C6-B-r1: TTFT=4.619s pp=84.7 tok/s tg=14.66 tok/s TPOT=68.2 ms net_tx=12171162 rx=10108476
+C6-B-r2: TTFT=4.711s pp=83.0 tok/s tg=14.78 tok/s TPOT=67.7 ms net_tx=12201218 rx=10105974
+C6-B-r3: TTFT=4.617s pp=84.7 tok/s tg=14.79 tok/s TPOT=67.6 ms net_tx=12191396 rx=10095464
+fin

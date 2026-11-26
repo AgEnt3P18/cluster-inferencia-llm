@@ -1,0 +1,1 @@
+2026-11-26T08:33:01Z docker run --name oom-worker --memory 4g --memory-swap 4g --cpus 4 cluster-llm:latest llama-cli -m /models/qwen2.5-7b-instruct-q8_0.gguf --n-gpu-layers 99 -lm none -c 4096 -p Hola -n 16

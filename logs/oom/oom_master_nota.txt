@@ -1,0 +1,9 @@
+Intento de OOM en el master (emulando la RTX 3060 de 8 GB del perfil A sobre la RTX 3060 de 12 GB del host):
+1. vram_ballast reservó 4096 MiB (ver oom_master_ballast.txt y oom_master_nvidia_smi_con_lastre.txt: 5143/12288 MiB usados, 7149 MiB libres).
+2. llama-cli --n-gpu-layers 99 con el modelo completo (7723 MiB de pesos) NO falló (exit 0, 31.8 tok/s).
+Causa: el host es Windows 11 + WSL2; el driver WDDM virtualiza la VRAM y desaloja a memoria del sistema
+las asignaciones de procesos inactivos (el lastre), además de la política "CUDA Sysmem Fallback".
+Por eso en este host no se puede forzar un CUDA OOM de forma fiable con un lastre.
+Conclusión: la prueba OOM exigida (worker, límite 4 GiB) sí se reproduce (exit 137, OOMKilled=true);
+la imposibilidad del master de referencia (8 GB VRAM) se demuestra por cálculo en el informe (sección 2).
+Esta corrida sí sirve como referencia del "servidor GPU único" (ver logs/baseline_gpu_unica).

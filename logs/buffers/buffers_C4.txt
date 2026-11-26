@@ -1,0 +1,99 @@
+[start_master] 2026-11-26T08:40:08.896250984Z TS=4,4,4,8 CTX=4096 KVT=q8_0 PARALLEL=1 RPC=10.0.50.12:50052,10.0.50.13:50052,10.0.50.14:50052 NETEM=none
+0.00.391.429 I cmn  common_param:   - CUDA0   : NVIDIA GeForce RTX 3060 (12287 MiB, 11245 MiB free)
+0.00.392.362 I cmn  common_param:   - RPC0    : 10.0.50.12:50052 (28064 MiB, 28064 MiB free)
+0.00.393.105 I cmn  common_param:   - RPC1    : 10.0.50.13:50052 (28064 MiB, 28064 MiB free)
+0.00.393.761 I cmn  common_param:   - RPC2    : 10.0.50.14:50052 (28064 MiB, 28064 MiB free)
+0.00.431.584 I llama_prepare_model_devices: using device RPC0 (10.0.50.12:50052) (unknown id) - 28064 MiB free
+0.00.432.318 I llama_prepare_model_devices: using device RPC1 (10.0.50.13:50052) (unknown id) - 28064 MiB free
+0.00.433.045 I llama_prepare_model_devices: using device RPC2 (10.0.50.14:50052) (unknown id) - 28064 MiB free
+0.00.433.171 I llama_prepare_model_devices: using device CUDA0 (NVIDIA GeForce RTX 3060) (0000:0b:00.0) - 11245 MiB free
+0.00.570.971 D load_tensors: layer   0 assigned to device RPC0, is_swa = 0
+0.00.570.997 D load_tensors: layer   1 assigned to device RPC0, is_swa = 0
+0.00.570.998 D load_tensors: layer   2 assigned to device RPC0, is_swa = 0
+0.00.570.998 D load_tensors: layer   3 assigned to device RPC0, is_swa = 0
+0.00.570.999 D load_tensors: layer   4 assigned to device RPC0, is_swa = 0
+0.00.570.999 D load_tensors: layer   5 assigned to device RPC0, is_swa = 0
+0.00.571.000 D load_tensors: layer   6 assigned to device RPC1, is_swa = 0
+0.00.571.000 D load_tensors: layer   7 assigned to device RPC1, is_swa = 0
+0.00.571.001 D load_tensors: layer   8 assigned to device RPC1, is_swa = 0
+0.00.571.001 D load_tensors: layer   9 assigned to device RPC1, is_swa = 0
+0.00.571.002 D load_tensors: layer  10 assigned to device RPC1, is_swa = 0
+0.00.571.002 D load_tensors: layer  11 assigned to device RPC1, is_swa = 0
+0.00.571.003 D load_tensors: layer  12 assigned to device RPC2, is_swa = 0
+0.00.571.003 D load_tensors: layer  13 assigned to device RPC2, is_swa = 0
+0.00.571.004 D load_tensors: layer  14 assigned to device RPC2, is_swa = 0
+0.00.571.004 D load_tensors: layer  15 assigned to device RPC2, is_swa = 0
+0.00.571.004 D load_tensors: layer  16 assigned to device RPC2, is_swa = 0
+0.00.571.005 D load_tensors: layer  17 assigned to device RPC2, is_swa = 0
+0.00.571.005 D load_tensors: layer  18 assigned to device CUDA0, is_swa = 0
+0.00.571.006 D load_tensors: layer  19 assigned to device CUDA0, is_swa = 0
+0.00.571.006 D load_tensors: layer  20 assigned to device CUDA0, is_swa = 0
+0.00.571.007 D load_tensors: layer  21 assigned to device CUDA0, is_swa = 0
+0.00.571.007 D load_tensors: layer  22 assigned to device CUDA0, is_swa = 0
+0.00.571.008 D load_tensors: layer  23 assigned to device CUDA0, is_swa = 0
+0.00.571.008 D load_tensors: layer  24 assigned to device CUDA0, is_swa = 0
+0.00.571.009 D load_tensors: layer  25 assigned to device CUDA0, is_swa = 0
+0.00.571.009 D load_tensors: layer  26 assigned to device CUDA0, is_swa = 0
+0.00.571.009 D load_tensors: layer  27 assigned to device CUDA0, is_swa = 0
+0.00.571.010 D load_tensors: layer  28 assigned to device CUDA0, is_swa = 0
+0.01.297.988 I load_tensors: offloading output layer to GPU
+0.01.298.008 I load_tensors: offloading 27 repeating layers to GPU
+0.01.298.009 I load_tensors: offloaded 29/29 layers to GPU
+0.01.298.019 I load_tensors:        CUDA0 model buffer size =  2914.10 MiB
+0.01.298.021 I load_tensors:    CUDA_Host model buffer size =   552.23 MiB
+0.01.298.021 I load_tensors: RPC0[10.0.50.12:50052] model buffer size =  1417.11 MiB
+0.01.298.023 I load_tensors: RPC0[10.0.50.13:50052] model buffer size =  1417.11 MiB
+0.01.298.024 I load_tensors: RPC0[10.0.50.14:50052] model buffer size =  1417.11 MiB
+0.01.307.285 D load_all_data: using async uploads for device CUDA0, buffer type CUDA0, backend CUDA0
+0.01.972.712 D load_all_data: device RPC0 does not support async, host buffers or events
+0.04.240.498 D load_all_data: device RPC1 does not support async, host buffers or events
+0.06.816.776 D load_all_data: device RPC2 does not support async, host buffers or events
+0.09.269.452 D load_all_data: buffer type CUDA_Host is not the default buffer type for device CUDA0 for async uploads
+0.09.331.415 I llama_context:  CUDA_Host  output buffer size =     0.58 MiB
+0.09.331.502 D llama_kv_cache: layer   0: dev = RPC0
+0.09.331.553 D llama_kv_cache: layer   1: dev = RPC0
+0.09.331.556 D llama_kv_cache: layer   2: dev = RPC0
+0.09.331.557 D llama_kv_cache: layer   3: dev = RPC0
+0.09.331.558 D llama_kv_cache: layer   4: dev = RPC0
+0.09.331.561 D llama_kv_cache: layer   5: dev = RPC0
+0.09.331.562 D llama_kv_cache: layer   6: dev = RPC1
+0.09.331.565 D llama_kv_cache: layer   7: dev = RPC1
+0.09.331.566 D llama_kv_cache: layer   8: dev = RPC1
+0.09.331.568 D llama_kv_cache: layer   9: dev = RPC1
+0.09.331.569 D llama_kv_cache: layer  10: dev = RPC1
+0.09.331.570 D llama_kv_cache: layer  11: dev = RPC1
+0.09.331.572 D llama_kv_cache: layer  12: dev = RPC2
+0.09.331.574 D llama_kv_cache: layer  13: dev = RPC2
+0.09.331.576 D llama_kv_cache: layer  14: dev = RPC2
+0.09.331.577 D llama_kv_cache: layer  15: dev = RPC2
+0.09.331.578 D llama_kv_cache: layer  16: dev = RPC2
+0.09.331.580 D llama_kv_cache: layer  17: dev = RPC2
+0.09.331.583 D llama_kv_cache: layer  18: dev = CUDA0
+0.09.331.585 D llama_kv_cache: layer  19: dev = CUDA0
+0.09.331.586 D llama_kv_cache: layer  20: dev = CUDA0
+0.09.331.587 D llama_kv_cache: layer  21: dev = CUDA0
+0.09.331.588 D llama_kv_cache: layer  22: dev = CUDA0
+0.09.331.589 D llama_kv_cache: layer  23: dev = CUDA0
+0.09.331.590 D llama_kv_cache: layer  24: dev = CUDA0
+0.09.331.591 D llama_kv_cache: layer  25: dev = CUDA0
+0.09.331.591 D llama_kv_cache: layer  26: dev = CUDA0
+0.09.331.592 D llama_kv_cache: layer  27: dev = CUDA0
+0.09.337.685 I llama_kv_cache:      CUDA0 KV buffer size =    42.50 MiB
+0.09.338.492 I llama_kv_cache: RPC0[10.0.50.12:50052] KV buffer size =    25.50 MiB
+0.09.339.255 I llama_kv_cache: RPC0[10.0.50.13:50052] KV buffer size =    25.50 MiB
+0.09.339.922 I llama_kv_cache: RPC0[10.0.50.14:50052] KV buffer size =    25.50 MiB
+0.09.339.947 I llama_kv_cache: size =  119.00 MiB (  4096 cells,  28 layers,  1/1 seqs), K (q8_0):   59.50 MiB, V (q8_0):   59.50 MiB
+0.09.339.949 I llama_kv_cache: n_rot_k = 128, n_embd_head_k_all = 128
+0.09.339.949 I llama_kv_cache: n_rot_v = 64, n_embd_head_k_all = 128
+0.09.363.953 I init_rotation: RPC0[10.0.50.12:50052] rotation buffer size =     0.47 MiB
+0.09.364.606 I init_rotation: RPC0[10.0.50.13:50052] rotation buffer size =     0.47 MiB
+0.09.365.258 I init_rotation: RPC0[10.0.50.14:50052] rotation buffer size =     0.47 MiB
+0.09.366.151 I init_rotation:      CUDA0 rotation buffer size =     0.78 MiB
+0.09.393.682 I sched_reserve: RPC0[10.0.50.12:50052] compute buffer size =   232.05 MiB
+0.09.393.707 I sched_reserve: RPC0[10.0.50.13:50052] compute buffer size =   169.04 MiB
+0.09.393.708 I sched_reserve: RPC0[10.0.50.14:50052] compute buffer size =   169.04 MiB
+0.09.393.709 I sched_reserve:      CUDA0 compute buffer size =   176.04 MiB
+0.09.393.710 I sched_reserve:        CPU compute buffer size =    86.07 MiB
+worker-1 1538842624
+worker-2 1539461120
+worker-3 1539391488

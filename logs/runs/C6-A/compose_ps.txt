@@ -1,0 +1,5 @@
+NAME       IMAGE                COMMAND                  SERVICE    CREATED              STATUS              PORTS
+master     cluster-llm:latest   "/opt/nvidia/nvidia_…"   master     About a minute ago   Up About a minute   0.0.0.0:18080->8080/tcp, [::]:18080->8080/tcp
+worker-1   cluster-llm:latest   "/opt/nvidia/nvidia_…"   worker-1   About a minute ago   Up About a minute   
+worker-2   cluster-llm:latest   "/opt/nvidia/nvidia_…"   worker-2   About a minute ago   Up About a minute   
+worker-3   cluster-llm:latest   "/opt/nvidia/nvidia_…"   worker-3   About a minute ago   Up About a minute   

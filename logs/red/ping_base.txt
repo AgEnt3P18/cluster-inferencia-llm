@@ -1,0 +1,25 @@
+PING worker-1 (10.0.50.12) 56(84) bytes of data.
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=1 ttl=64 time=0.924 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=2 ttl=64 time=0.056 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=3 ttl=64 time=0.057 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=4 ttl=64 time=0.060 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=5 ttl=64 time=0.058 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=6 ttl=64 time=0.052 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=7 ttl=64 time=0.063 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=8 ttl=64 time=0.138 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=9 ttl=64 time=0.047 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=10 ttl=64 time=0.171 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=11 ttl=64 time=0.062 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=12 ttl=64 time=0.038 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=13 ttl=64 time=0.047 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=14 ttl=64 time=0.055 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=15 ttl=64 time=0.064 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=16 ttl=64 time=0.062 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=17 ttl=64 time=0.064 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=18 ttl=64 time=0.053 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=19 ttl=64 time=0.067 ms
+64 bytes from worker-1.codigo_cluster (10.0.50.12): icmp_seq=20 ttl=64 time=0.052 ms
+
+--- worker-1 ping statistics ---
+20 packets transmitted, 20 received, 0% packet loss, time 19414ms
+rtt min/avg/max/mdev = 0.038/0.109/0.924/0.189 ms

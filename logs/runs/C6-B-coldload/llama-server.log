@@ -1,0 +1,27 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.1
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+qdisc netem 8051: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit
+[start_master] 2026-11-26T08:37:12.340749742Z TS=1,5 CTX=4096 KVT=q8_0 PARALLEL=1 RPC=10.0.50.12:50052 NETEM=B
+[start_master] llama.cpp commit: b1b770d90d94cad9e9ea5b993bdbc383a522fb28
+0.00.206.897 I srv  llama_server: initializing ...
+0.00.206.940 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.207.351 W srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.209.873 I srv    load_model: loading model '/models/qwen2.5-7b-instruct-q8_0.gguf'
+0.00.565.101 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+1.48.084.628 I cmn          init: llama threadpool init, n_threads = 6
+1.48.420.498 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+1.48.424.202 I srv  server_run_i: model loaded
+1.48.424.227 I srv  server_on_li: listening on http://0.0.0.0:8080

@@ -1,0 +1,33 @@
+=== C1 escenario A  TS=1,1,1,1 CTX=2048 KVT=f16 ===
+{"config":"C1","scenario":"A","load_netem":"none","t_up":1795678434.9127047,"t_ready":1795678470.2539797,"load_s":35.34127497673035}
+C1-A-warmup: TTFT=13.656s pp=28.6 tok/s tg=5.33 tok/s TPOT=187.5 ms net_tx=36880766 rx=30949800
+C1-A-r1: TTFT=13.591s pp=28.8 tok/s tg=5.45 tok/s TPOT=183.6 ms net_tx=36840130 rx=30944652
+C1-A-r2: TTFT=13.797s pp=28.3 tok/s tg=5.47 tok/s TPOT=182.8 ms net_tx=36839226 rx=30946650
+C1-A-r3: TTFT=13.605s pp=28.7 tok/s tg=5.46 tok/s TPOT=183.1 ms net_tx=36838352 rx=30944172
+=== C1 escenario B  TS=1,1,1,1 CTX=2048 KVT=f16 ===
+{"config":"C1","scenario":"B","load_netem":"none","t_up":1795678764.9542994,"t_ready":1795678782.9844615,"load_s":18.03016209602356}
+C1-B-warmup: TTFT=16.752s pp=23.4 tok/s tg=4.77 tok/s TPOT=209.5 ms net_tx=36622164 rx=30776156
+C1-B-r1: TTFT=17.605s pp=22.2 tok/s tg=4.54 tok/s TPOT=220.5 ms net_tx=36383640 rx=30820318
+C1-B-r2: TTFT=17.536s pp=22.3 tok/s tg=4.44 tok/s TPOT=225.3 ms net_tx=36148570 rx=30741590
+C1-B-r3: TTFT=17.276s pp=22.6 tok/s tg=4.48 tok/s TPOT=223.1 ms net_tx=36205014 rx=30737972
+=== C2 escenario A  TS=1,1,1,1 CTX=4096 KVT=f16 ===
+{"config":"C2","scenario":"A","load_netem":"none","t_up":1795679134.2980785,"t_ready":1795679152.0880432,"load_s":17.78996467590332}
+C2-A-warmup: TTFT=14.342s pp=27.3 tok/s tg=5.03 tok/s TPOT=198.9 ms net_tx=36871022 rx=30962922
+C2-A-r1: TTFT=13.988s pp=28.0 tok/s tg=5.01 tok/s TPOT=199.5 ms net_tx=36851808 rx=30967992
+C2-A-r2: TTFT=14.613s pp=26.8 tok/s tg=5.04 tok/s TPOT=198.4 ms net_tx=36851480 rx=30963426
+C2-A-r3: TTFT=14.151s pp=27.6 tok/s tg=5.09 tok/s TPOT=196.6 ms net_tx=36850855 rx=30963084
+=== C2 escenario B  TS=1,1,1,1 CTX=4096 KVT=f16 ===
+{"config":"C2","scenario":"B","load_netem":"none","t_up":1795679466.6166828,"t_ready":1795679483.0091507,"load_s":16.392467975616455}
+C2-B-warmup: TTFT=17.398s pp=22.5 tok/s tg=4.49 tok/s TPOT=222.5 ms net_tx=36218642 rx=30704908
+C2-B-r1: TTFT=17.273s pp=22.6 tok/s tg=4.52 tok/s TPOT=221.3 ms net_tx=36175848 rx=30703860
+C2-B-r2: TTFT=16.900s pp=23.1 tok/s tg=4.42 tok/s TPOT=226.4 ms net_tx=36220633 rx=30694710
+C2-B-r3: TTFT=17.161s pp=22.8 tok/s tg=4.51 tok/s TPOT=221.9 ms net_tx=36321298 rx=30838250
+=== C3 escenario A  TS=8,4,4 CTX=2048 KVT=f16 ===
+{"config":"C3","scenario":"A","load_netem":"none","t_up":1795679837.7344666,"t_ready":1795679852.6172962,"load_s":14.882829666137695}
+C3-A-warmup: TTFT=13.938s pp=28.1 tok/s tg=5.06 tok/s TPOT=197.6 ms net_tx=24894377 rx=20640368
+C3-A-r1: TTFT=14.156s pp=27.6 tok/s tg=5.12 tok/s TPOT=195.2 ms net_tx=24882371 rx=20635452
+C3-A-r2: TTFT=14.293s pp=27.4 tok/s tg=5.14 tok/s TPOT=194.6 ms net_tx=24885637 rx=20636544
+Error: No such object: master
+Error response from daemon: No such container: master
+Error response from daemon: No such container: master
+=== C3 escenario B  TS=8,4,4 CTX=2048 KVT=f16 ===

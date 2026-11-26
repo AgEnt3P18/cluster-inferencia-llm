@@ -1,0 +1,8 @@
+--- master
+qdisc netem 8026: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit
+--- worker-1
+qdisc netem 8027: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit
+--- worker-2
+qdisc netem 8028: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit
+--- worker-3
+qdisc netem 8029: root refcnt 13 limit 1000 delay 2ms loss 0.1% rate 100Mbit

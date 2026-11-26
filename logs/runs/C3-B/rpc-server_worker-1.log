@@ -1,0 +1,51 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.1
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+WARNING: The NVIDIA Driver was not detected.  GPU functionality will not be available.
+   Use the NVIDIA Container Toolkit to start this container with GPU support; see
+   https://docs.nvidia.com/datacenter/cloud-native/ .
+
+[start_worker] worker-1 2026-11-26T08:07:08.436434314Z NETEM=none
+load_backend: loaded RPC backend from /opt/llama/bin/libggml-rpc.so
+load_backend: loaded CPU backend from /opt/llama/bin/libggml-cpu-haswell.so
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+WARNING: Host ('0.0.0.0') is != '127.0.0.1'
+         Never expose the RPC server to an open network!
+         This is an experimental feature and is not secure!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Starting RPC server v10.0.0
+  endpoint       : 0.0.0.0:50052
+  local cache    : n/a
+Devices:
+  CPU: AMD Ryzen 5 5600 6-Core Processor (28064 MiB, 28064 MiB free)
+  transport      : TCP
+Accepted client connection
+recv returned 0 (peer closed?)
+Client connection closed
+Accepted client connection
+recv returned 0 (peer closed?)
+Client connection closed
+Accepted client connection
+recv returned 0 (peer closed?)
+Client connection closed
+Accepted client connection
+recv returned 0 (peer closed?)
+Client connection closed
+Accepted client connection
+recv returned 0 (peer closed?)
+Client connection closed
+Accepted client connection

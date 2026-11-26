@@ -1,0 +1,2 @@
+bash: line 1: nvidia-smi: command not found
+sin GPU (worker CPU)

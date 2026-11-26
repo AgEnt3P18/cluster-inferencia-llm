@@ -1,0 +1,350 @@
+{
+  "configs": {
+    "C1": {
+      "workers": 3,
+      "capex": 10694000,
+      "watts": 750,
+      "opex": {
+        "energia": 1200000.0,
+        "internet": 1440000,
+        "mantenimiento": 534700.0,
+        "depreciacion": 2138800.0,
+        "total_sin_dep": 3174700.0
+      },
+      "tco3": 20218100.0,
+      "tps_A": 5.460899357889556,
+      "tps_B": 4.483229326161486,
+      "tpot_A": 183.1200200668896,
+      "slo_A": false,
+      "slo_B": false,
+      "cop1m": {
+        "0.25": 685618.3106878484,
+        "0.5": 342809.1553439242,
+        "1.0": 171404.5776719621
+      },
+      "capacidad_tok_anio": 39318475.3768048,
+      "cop1m_demanda": 179716.44444444444
+    },
+    "C2": {
+      "workers": 3,
+      "capex": 10694000,
+      "watts": 750,
+      "opex": {
+        "energia": 1200000.0,
+        "internet": 1440000,
+        "mantenimiento": 534700.0,
+        "depreciacion": 2138800.0,
+        "total_sin_dep": 3174700.0
+      },
+      "tco3": 20218100.0,
+      "tps_A": 5.03984035943265,
+      "tps_B": 4.507526091189153,
+      "tpot_A": 198.41898327759196,
+      "slo_A": false,
+      "slo_B": false,
+      "cop1m": {
+        "0.25": 742899.0455193856,
+        "0.5": 371449.5227596928,
+        "1.0": 185724.7613798464
+      },
+      "capacidad_tok_anio": 36286850.58791508,
+      "cop1m_demanda": null
+    },
+    "C3": {
+      "workers": 2,
+      "capex": 9094000,
+      "watts": 600,
+      "opex": {
+        "energia": 960000.0,
+        "internet": 1440000,
+        "mantenimiento": 454700.0,
+        "depreciacion": 1818800.0,
+        "total_sin_dep": 2854700.0
+      },
+      "tco3": 17658100.0,
+      "tps_A": 6.9470963971661055,
+      "tps_B": 6.408155666145892,
+      "tpot_A": 143.94503010033444,
+      "slo_A": false,
+      "slo_B": false,
+      "cop1m": {
+        "0.25": 470702.9140767992,
+        "0.5": 235351.4570383996,
+        "1.0": 117675.7285191998
+      },
+      "capacidad_tok_anio": 50019094.05959596,
+      "cop1m_demanda": 156960.88888888888
+    },
+    "C4": {
+      "workers": 3,
+      "capex": 10694000,
+      "watts": 750,
+      "opex": {
+        "energia": 1200000.0,
+        "internet": 1440000,
+        "mantenimiento": 534700.0,
+        "depreciacion": 2138800.0,
+        "total_sin_dep": 3174700.0
+      },
+      "tco3": 20218100.0,
+      "tps_A": 5.90844284865988,
+      "tps_B": 5.225696704652938,
+      "tpot_A": 169.24933110367894,
+      "slo_A": false,
+      "slo_B": false,
+      "cop1m": {
+        "0.25": 633685.1668865354,
+        "0.5": 316842.5834432677,
+        "1.0": 158421.29172163384
+      },
+      "capacidad_tok_anio": 42540788.51035114,
+      "cop1m_demanda": 179716.44444444444
+    },
+    "C5": {
+      "workers": 3,
+      "capex": 10694000,
+      "watts": 750,
+      "opex": {
+        "energia": 1200000.0,
+        "internet": 1440000,
+        "mantenimiento": 534700.0,
+        "depreciacion": 2138800.0,
+        "total_sin_dep": 3174700.0
+      },
+      "tco3": 20218100.0,
+      "tps_A": 9.738579715763102,
+      "tps_B": 8.289238879590988,
+      "tpot_A": 102.68437792642142,
+      "slo_A": false,
+      "slo_B": false,
+      "cop1m": {
+        "0.25": 384459.81876929273,
+        "0.5": 192229.90938464637,
+        "1.0": 96114.95469232318
+      },
+      "capacidad_tok_anio": 70117773.95349434,
+      "cop1m_demanda": 179716.44444444444
+    },
+    "C6": {
+      "workers": 1,
+      "capex": 7494000,
+      "watts": 450,
+      "opex": {
+        "energia": 720000.0,
+        "internet": 1440000,
+        "mantenimiento": 374700.0,
+        "depreciacion": 1498800.0,
+        "total_sin_dep": 2534700.0
+      },
+      "tco3": 15098100.0,
+      "tps_A": 16.05931915039434,
+      "tps_B": 14.777556993058749,
+      "tpot_A": 62.26914046822743,
+      "slo_A": true,
+      "slo_B": true,
+      "cop1m": {
+        "0.25": 174101.05735247122,
+        "0.5": 87050.52867623561,
+        "1.0": 43525.264338117806
+      },
+      "capacidad_tok_anio": 115627097.88283925,
+      "cop1m_demanda": 134205.33333333334
+    }
+  },
+  "opciones": {
+    "B_rtx4090": {
+      "capex": 12499000,
+      "opex": {
+        "energia": 880000.0,
+        "internet": 1440000,
+        "mantenimiento": 624950.0,
+        "depreciacion": 2499800.0,
+        "total_sin_dep": 2944950.0
+      },
+      "tco3": 21333850.0,
+      "tps": 103.73967141586682,
+      "metodo": "estimado por roofline: tok/s medido en RTX 3060 12 GB × 1008/360 GB/s (BW nominal 4090/3060)",
+      "cop1m": {
+        "0.25": 38082.95234641265,
+        "0.5": 19041.476173206323,
+        "1.0": 9520.738086603162
+      }
+    },
+    "B_rtx3060_12gb": {
+      "capex": 6874000,
+      "opex": {
+        "energia": 480000.0,
+        "internet": 1440000,
+        "mantenimiento": 343700.0,
+        "depreciacion": 1374800.0,
+        "total_sin_dep": 2263700.0
+      },
+      "tco3": 13665100.0,
+      "tps": 37.04988264852387,
+      "metodo": "medido en el host (RTX 3060 12 GB, modelo completo en VRAM)",
+      "cop1m": {
+        "0.25": 68301.81077982164,
+        "0.5": 34150.90538991082,
+        "1.0": 17075.45269495541
+      }
+    }
+  },
+  "apis": [
+    {
+      "proveedor": "DeepSeek V4 Flash (tarifa hora pico)",
+      "usd_in": 0.3,
+      "usd_out": 1.2,
+      "fuente": "https://www.morphllm.com/deepseek-api (nov-2026)",
+      "cop_1m": 5776.74599,
+      "cop_anio_demanda": 216627.974625
+    },
+    {
+      "proveedor": "OpenAI GPT-5 mini",
+      "usd_in": 0.25,
+      "usd_out": 2.0,
+      "fuente": "https://www.usagepricing.com/ai-token-pricing/openai/gpt-5-mini (nov-2026)",
+      "cop_1m": 8444.844991666665,
+      "cop_anio_demanda": 316681.68718749995
+    },
+    {
+      "proveedor": "Anthropic Claude Haiku 5.5",
+      "usd_in": 0.1,
+      "usd_out": 0.5,
+      "fuente": "https://pricepertoken.com/pricing-page/model/anthropic-claude-haiku-5.5 (nov-2026)",
+      "cop_1m": 2288.6709966666663,
+      "cop_anio_demanda": 85825.16237499999
+    }
+  ],
+  "breakeven": {
+    "cluster_C6": {
+      "DeepSeek V4 Flash (tarifa hora pico)": {
+        "tok_anio_breakeven": 871199808.4582562,
+        "capacidad_tok_anio": 115627097.88283925
+      },
+      "OpenAI GPT-5 mini": {
+        "tok_anio_breakeven": 595949363.7794708,
+        "capacidad_tok_anio": 115627097.88283925
+      },
+      "Anthropic Claude Haiku 5.5": {
+        "tok_anio_breakeven": 2198961758.7367835,
+        "capacidad_tok_anio": 115627097.88283925
+      }
+    },
+    "B_rtx4090": {
+      "DeepSeek V4 Flash (tarifa hora pico)": {
+        "tok_anio_breakeven": 1231018872.154587,
+        "capacidad_tok_anio": 746925634.1942412
+      },
+      "OpenAI GPT-5 mini": {
+        "tok_anio_breakeven": 842085715.0546534,
+        "capacidad_tok_anio": 746925634.1942412
+      },
+      "Anthropic Claude Haiku 5.5": {
+        "tok_anio_breakeven": 3107167147.960785,
+        "capacidad_tok_anio": 746925634.1942412
+      }
+    },
+    "B_rtx3060_12gb": {
+      "DeepSeek V4 Flash (tarifa hora pico)": {
+        "tok_anio_breakeven": 788511965.25145,
+        "capacidad_tok_anio": 266759155.06937185
+      },
+      "OpenAI GPT-5 mini": {
+        "tok_anio_breakeven": 539386257.2762697,
+        "capacidad_tok_anio": 266759155.06937185
+      },
+      "Anthropic Claude Haiku 5.5": {
+        "tok_anio_breakeven": 1990252570.1455164,
+        "capacidad_tok_anio": 266759155.06937185
+      }
+    }
+  },
+  "sensibilidad": {
+    "base": 87050.52867623561,
+    "energia": [
+      83937.07165282425,
+      90163.98569964699
+    ],
+    "utilizacion": [
+      43525.264338117806,
+      174101.05735247122
+    ],
+    "throughput": [
+      66961.94513556585,
+      124357.89810890802
+    ]
+  },
+  "sens_breakeven_api": {
+    "proveedor": "DeepSeek V4 Flash (tarifa hora pico)",
+    "0.5": 1742399616.9165125,
+    "1.0": 871199808.4582562,
+    "1.5": 580799872.3055041
+  },
+  "upgrades": {
+    "gpu_3060_12gb": {
+      "desc": "Cambiar la RTX 3060 8 GB del master por una RTX 3060 12 GB (el modelo cabe entero en el master)",
+      "inversion": 1750000,
+      "tps_antes": 16.05931915039434,
+      "tps_despues": 37.04988264852387,
+      "mejora_tps_pct": 130.70643469722748,
+      "tco3_despues": 13665100.0,
+      "cop1m_antes": 43525.264338117806,
+      "cop1m_despues": 17075.45269495541,
+      "nota": "medido en el host (GPU1); el worker deja de ser necesario",
+      "cop_invertido_por_cop1m_reducido": 66.16304205146945,
+      "cop_invertido_por_tok_s": 83370.79660371874
+    },
+    "switch_10g": {
+      "desc": "Switch 10 GbE 8 puertos (MikroTik CRS312) + 4 NIC 10 GbE",
+      "inversion": 4600000,
+      "tps_antes": 16.05931915039434,
+      "tps_despues": 16.495875920349903,
+      "mejora_tps_pct": 2.718401483071853,
+      "tco3_despues": 20484100.0,
+      "cop1m_antes": 43525.264338117806,
+      "cop1m_despues": 57489.39720097308,
+      "nota": "modelo: ΔTPOT = 1.79 ms por ms de RTT (medido entre A y B); RTT 10 GbE ≈ 0.2 ms",
+      "cop_invertido_por_cop1m_reducido": null,
+      "cop_invertido_por_tok_s": 10537003.012158634
+    },
+    "cpu_worker": {
+      "desc": "Reemplazar el worker por un equipo con el doble de ancho de banda de memoria",
+      "inversion": 2500000,
+      "tps_antes": 16.05931915039434,
+      "tps_despues": 22.010943047859463,
+      "mejora_tps_pct": 37.0602504485315,
+      "tco3_despues": 17973100.0,
+      "cop1m_antes": 43525.264338117806,
+      "cop1m_despues": 37803.376309398176,
+      "nota": "worker nuevo (~2.5 M COP) con el doble de BW de memoria: la etapa CPU baja a la mitad (Amdahl)",
+      "cop_invertido_por_cop1m_reducido": 436.91872113747354,
+      "cop_invertido_por_tok_s": 420053.42458967946
+    },
+    "ram_master": {
+      "desc": "RAM del master 32 -> 64 GB DDR5",
+      "inversion": 600000,
+      "tps_antes": 16.05931915039434,
+      "tps_despues": 16.05931915039434,
+      "mejora_tps_pct": 0.0,
+      "tco3_despues": 15788100.0,
+      "cop1m_antes": 43525.264338117806,
+      "cop1m_despues": 45514.41743640841,
+      "nota": "la RAM del master no está en la ruta crítica del decode (usa < 2 GB)",
+      "cop_invertido_por_cop1m_reducido": null,
+      "cop_invertido_por_tok_s": null
+    },
+    "nvme_workers": {
+      "desc": "NVMe 512 GB en cada worker (3)",
+      "inversion": 750000,
+      "tps_antes": 16.05931915039434,
+      "tps_despues": 16.05931915039434,
+      "mejora_tps_pct": 0.0,
+      "tco3_despues": 15960600.0,
+      "cop1m_antes": 43525.264338117806,
+      "cop1m_despues": 46011.705710981056,
+      "nota": "solo acorta el cold start (carga ≈ 11 s); no cambia tok/s",
+      "cop_invertido_por_cop1m_reducido": null,
+      "cop_invertido_por_tok_s": null
+    }
+  }
+}

@@ -1,0 +1,323 @@
+[
+    {
+        "Id": "2457a9ffbc45962858b73f5a82c240ae250715aca1b890dfe2d116f276d8a829",
+        "Created": "2026-11-26T07:33:55.510297336Z",
+        "Path": "/opt/nvidia/nvidia_entrypoint.sh",
+        "Args": [
+            "/codigo/start_master.sh"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 26801,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-11-26T07:33:56.030324042Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:45bb682427cae5c3b92c553aa5654074b2f5836c0e402195b4b2089dbdb7c4f9",
+        "ResolvConfPath": "/var/lib/docker/containers/2457a9ffbc45962858b73f5a82c240ae250715aca1b890dfe2d116f276d8a829/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/2457a9ffbc45962858b73f5a82c240ae250715aca1b890dfe2d116f276d8a829/hostname",
+        "HostsPath": "/var/lib/docker/containers/2457a9ffbc45962858b73f5a82c240ae250715aca1b890dfe2d116f276d8a829/hosts",
+        "LogPath": "/var/lib/docker/containers/2457a9ffbc45962858b73f5a82c240ae250715aca1b890dfe2d116f276d8a829/2457a9ffbc45962858b73f5a82c240ae250715aca1b890dfe2d116f276d8a829-json.log",
+        "Name": "/master",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": [
+            "2fbe625279a73a736c89c4bb1451ac64c61833e39c30a938a0d259ccae05500b"
+        ],
+        "HostConfig": {
+            "Binds": [
+                "C:\\Users\\SANTIAGO\\Documents\\proyectos\\parcial arqui\\Examen_Cluster_LLM_Santiago_Payares\\codigo:/codigo:ro",
+                "llm_models:/models:ro",
+                "/run/desktop/mnt/host/c/Users/SANTIAGO/Documents/proyectos/parcial arqui/Examen_Cluster_LLM_Santiago_Payares/logs:/logs:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "codigo_cluster",
+            "PortBindings": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "18080"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": [
+                "CAP_NET_ADMIN"
+            ],
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 17179869184,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": [
+                {
+                    "Driver": "nvidia",
+                    "Count": 0,
+                    "DeviceIDs": [
+                        "0"
+                    ],
+                    "Capabilities": [
+                        [
+                            "gpu"
+                        ]
+                    ],
+                    "Options": null
+                }
+            ],
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": null,
+            "Name": "overlayfs"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "llm_models",
+                "Source": "/var/lib/docker/volumes/llm_models/_data",
+                "Destination": "/models",
+                "Driver": "local",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": ""
+            },
+            {
+                "Type": "bind",
+                "Source": "/run/desktop/mnt/host/c/Users/SANTIAGO/Documents/proyectos/parcial arqui/Examen_Cluster_LLM_Santiago_Payares/logs",
+                "Destination": "/logs",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "C:\\Users\\SANTIAGO\\Documents\\proyectos\\parcial arqui\\Examen_Cluster_LLM_Santiago_Payares\\codigo",
+                "Destination": "/codigo",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "master",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "CTX=2048",
+                "RPC=10.0.50.12:50052,10.0.50.13:50052,10.0.50.14:50052",
+                "KVT=f16",
+                "TS=1,1,1,1",
+                "PATH=/opt/llama/bin:/opt/cluster:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NVARCH=x86_64",
+                "NVIDIA_REQUIRE_CUDA=cuda\u003e=12.4 brand=tesla,driver\u003e=470,driver\u003c471 brand=unknown,driver\u003e=470,driver\u003c471 brand=nvidia,driver\u003e=470,driver\u003c471 brand=nvidiartx,driver\u003e=470,driver\u003c471 brand=geforce,driver\u003e=470,driver\u003c471 brand=geforcertx,driver\u003e=470,driver\u003c471 brand=quadro,driver\u003e=470,driver\u003c471 brand=quadrortx,driver\u003e=470,driver\u003c471 brand=titan,driver\u003e=470,driver\u003c471 brand=titanrtx,driver\u003e=470,driver\u003c471 brand=tesla,driver\u003e=525,driver\u003c526 brand=unknown,driver\u003e=525,driver\u003c526 brand=nvidia,driver\u003e=525,driver\u003c526 brand=nvidiartx,driver\u003e=525,driver\u003c526 brand=geforce,driver\u003e=525,driver\u003c526 brand=geforcertx,driver\u003e=525,driver\u003c526 brand=quadro,driver\u003e=525,driver\u003c526 brand=quadrortx,driver\u003e=525,driver\u003c526 brand=titan,driver\u003e=525,driver\u003c526 brand=titanrtx,driver\u003e=525,driver\u003c526 brand=tesla,driver\u003e=535,driver\u003c536 brand=unknown,driver\u003e=535,driver\u003c536 brand=nvidia,driver\u003e=535,driver\u003c536 brand=nvidiartx,driver\u003e=535,driver\u003c536 brand=geforce,driver\u003e=535,driver\u003c536 brand=geforcertx,driver\u003e=535,driver\u003c536 brand=quadro,driver\u003e=535,driver\u003c536 brand=quadrortx,driver\u003e=535,driver\u003c536 brand=titan,driver\u003e=535,driver\u003c536 brand=titanrtx,driver\u003e=535,driver\u003c536",
+                "NV_CUDA_CUDART_VERSION=12.4.127-1",
+                "NV_CUDA_COMPAT_PACKAGE=cuda-compat-12-4",
+                "CUDA_VERSION=12.4.1",
+                "LD_LIBRARY_PATH=/opt/llama/bin:/usr/local/nvidia/lib:/usr/local/nvidia/lib64",
+                "NVIDIA_VISIBLE_DEVICES=all",
+                "NVIDIA_DRIVER_CAPABILITIES=compute,utility",
+                "NV_CUDA_LIB_VERSION=12.4.1-1",
+                "NV_NVTX_VERSION=12.4.127-1",
+                "NV_LIBNPP_VERSION=12.2.5.30-1",
+                "NV_LIBNPP_PACKAGE=libnpp-12-4=12.2.5.30-1",
+                "NV_LIBCUSPARSE_VERSION=12.3.1.170-1",
+                "NV_LIBCUBLAS_PACKAGE_NAME=libcublas-12-4",
+                "NV_LIBCUBLAS_VERSION=12.4.5.8-1",
+                "NV_LIBCUBLAS_PACKAGE=libcublas-12-4=12.4.5.8-1",
+                "NV_LIBNCCL_PACKAGE_NAME=libnccl2",
+                "NV_LIBNCCL_PACKAGE_VERSION=2.21.5-1",
+                "NCCL_VERSION=2.21.5-1",
+                "NV_LIBNCCL_PACKAGE=libnccl2=2.21.5-1+cuda12.4",
+                "NVIDIA_PRODUCT_NAME=CUDA"
+            ],
+            "Cmd": [
+                "/codigo/start_master.sh"
+            ],
+            "Image": "cluster-llm:latest",
+            "Volumes": null,
+            "WorkingDir": "/work",
+            "Entrypoint": [
+                "/opt/nvidia/nvidia_entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "35e5e3fe1df32a69fdb5853c54b0b93ce500886816bb038907a71b1a463ecfb7",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "worker-3:service_started:false,worker-1:service_started:false,worker-2:service_started:false",
+                "com.docker.compose.image": "sha256:45bb682427cae5c3b92c553aa5654074b2f5836c0e402195b4b2089dbdb7c4f9",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "codigo",
+                "com.docker.compose.project.config_files": "C:\\Users\\SANTIAGO\\Documents\\proyectos\\parcial arqui\\Examen_Cluster_LLM_Santiago_Payares\\codigo\\docker-compose.yml",
+                "com.docker.compose.project.working_dir": "C:\\Users\\SANTIAGO\\Documents\\proyectos\\parcial arqui\\Examen_Cluster_LLM_Santiago_Payares\\codigo",
+                "com.docker.compose.service": "master",
+                "com.docker.compose.version": "2.39.2",
+                "maintainer": "NVIDIA CORPORATION \u003ccudatools@nvidia.com\u003e",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "22.04"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "5e188d4c6e612016e3a79866cc6ca7dccf511eb8062fd083541192288ac34c99",
+            "SandboxKey": "/var/run/docker/netns/5e188d4c6e61",
+            "Ports": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "18080"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "18080"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "codigo_cluster": {
+                    "IPAMConfig": {
+                        "IPv4Address": "10.0.50.11"
+                    },
+                    "Links": null,
+                    "Aliases": [
+                        "master",
+                        "master"
+                    ],
+                    "MacAddress": "26:41:55:d7:a8:83",
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "34f552ae0f2b4f2baba278711acab5ff8f1717f11f4451c06858cb53b99bbd08",
+                    "EndpointID": "1763b2467383edb8cce40abfeca8da0fba5838d22915d55eb8e44096cdf7668d",
+                    "Gateway": "10.0.50.1",
+                    "IPAddress": "10.0.50.11",
+                    "IPPrefixLen": 24,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "master",
+                        "2457a9ffbc45"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:4f14d2beec9dc301335677389a5fa764d995a8f5ff19ca725460139b93449448",
+            "size": 3337,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
