@@ -50,10 +50,10 @@
     }
   },
   "orden_tensor_split": [
-    "CUDA0 (master)",
-    "RPC worker-1",
-    "RPC worker-2",
-    "RPC worker-3"
+    "RPC0 = worker-1",
+    "RPC1 = worker-2",
+    "RPC2 = worker-3",
+    "CUDA0 = master (llama.cpp coloca los dispositivos RPC antes que la GPU local)"
   ],
   "configs": {
     "C1": {
@@ -75,23 +75,23 @@
     "C3": {
       "workers": 2,
       "ctx": 2048,
-      "tensor_split": "8,4,4",
+      "tensor_split": "4,4,8",
       "kv_type": "f16",
       "rpc": "10.0.50.12:50052,10.0.50.13:50052",
-      "nota": "Menos nodos, reparto proporcional a la VRAM de referencia (8:4:4)"
+      "nota": "Menos nodos, proporcional a la VRAM de referencia (w1:w2:master = 4:4:8)"
     },
     "C4": {
       "workers": 3,
       "ctx": 4096,
-      "tensor_split": "8,4,4,4",
+      "tensor_split": "4,4,4,8",
       "kv_type": "q8_0",
       "rpc": "10.0.50.12:50052,10.0.50.13:50052,10.0.50.14:50052",
-      "nota": "Proporcional a VRAM (8:4:4:4) + KV 8 bits"
+      "nota": "Proporcional a VRAM (w1:w2:w3:master = 4:4:4:8) + KV 8 bits"
     },
     "C5": {
       "workers": 3,
       "ctx": 4096,
-      "tensor_split": "7,1,1,1",
+      "tensor_split": "1,1,1,7",
       "kv_type": "q8_0",
       "rpc": "10.0.50.12:50052,10.0.50.13:50052,10.0.50.14:50052",
       "nota": "Proporcional al ancho de banda de memoria: 70 % en GPU (~5.7 GB < 8 GB de la RTX 3060 de referencia)"
@@ -99,7 +99,7 @@
     "C6": {
       "workers": 1,
       "ctx": 4096,
-      "tensor_split": "5,1",
+      "tensor_split": "1,5",
       "kv_type": "q8_0",
       "rpc": "10.0.50.12:50052",
       "nota": "Mínimo de nodos: master (83 % en GPU, ~6.7 GB < 8 GB de referencia) + 1 worker; menos saltos RPC"

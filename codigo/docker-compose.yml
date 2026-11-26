@@ -1,6 +1,6 @@
 # Clúster de inferencia LLM: 1 master (GPU) + 3 workers (rpc-server, CPU) en 10.0.50.0/24
 # Variables (ver config.json / run_experiments.sh):
-#   TS   --tensor-split (orden de dispositivos: CUDA0 = master, RPC0 = worker-1, RPC1 = worker-2, RPC2 = worker-3)
+#   TS   --tensor-split; orden real de dispositivos en llama.cpp: RPC0 = worker-1, RPC1 = worker-2, RPC2 = worker-3, CUDA0 = master
 #   CTX  tamaño de contexto
 #   RPC  lista de workers
 #   KVT  tipo de la caché KV (f16 | q8_0)
@@ -36,6 +36,9 @@ services:
       CTX: ${CTX:-4096}
       RPC: ${RPC:-10.0.50.12:50052,10.0.50.13:50052,10.0.50.14:50052}
       KVT: ${KVT:-f16}
+      PARALLEL: ${PARALLEL:-1}
+      NETEM: ${NETEM:-}
+      EXTRA_ARGS: ${EXTRA_ARGS:-}
     command: /codigo/start_master.sh
     depends_on: [worker-1, worker-2, worker-3]
 
@@ -50,6 +53,7 @@ services:
     cpus: 4
     environment:
       CUDA_VISIBLE_DEVICES: ""
+      NETEM: ${NETEM:-}
     command: /codigo/start_worker.sh
 
   worker-2:

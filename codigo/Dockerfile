@@ -16,9 +16,10 @@ RUN cmake -B build -DGGML_CUDA=ON -DGGML_RPC=ON -DGGML_NATIVE=OFF \
         -DCMAKE_EXE_LINKER_FLAGS=-Wl,--allow-shlib-undefined \
     && cmake --build build -j 12 \
     && git rev-parse HEAD > /src/LLAMA_COMMIT
-# Micro-benchmarks: ancho de banda de VRAM (roofline) y lastre de VRAM (emular GPU de 8 GB en la prueba OOM)
-COPY gpu_bw.cu vram_ballast.cu /src/
-RUN nvcc -O3 -arch=sm_86 -o /src/gpu_bw /src/gpu_bw.cu && nvcc -O3 -arch=sm_86 -o /src/vram_ballast /src/vram_ballast.cu
+# Micro-benchmarks: ancho de banda de VRAM y de DRAM (roofline) y lastre de VRAM (emular GPU de 8 GB en la prueba OOM)
+COPY gpu_bw.cu vram_ballast.cu cpu_bw.c /src/
+RUN nvcc -O3 -arch=sm_86 -o /src/gpu_bw /src/gpu_bw.cu && nvcc -O3 -arch=sm_86 -o /src/vram_ballast /src/vram_ballast.cu \
+    && gcc -O3 -march=x86-64-v3 -fopenmp -o /src/cpu_bw /src/cpu_bw.c
 
 FROM nvidia/cuda:${CUDA_VERSION}-runtime-ubuntu22.04
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -26,7 +27,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 COPY --from=build /src/llama.cpp/build/bin/ /opt/llama/bin/
 COPY --from=build /src/LLAMA_COMMIT /opt/llama/LLAMA_COMMIT
-COPY --from=build /src/gpu_bw /src/vram_ballast /opt/llama/bin/
+COPY --from=build /src/gpu_bw /src/vram_ballast /src/cpu_bw /opt/llama/bin/
 COPY tc.sh netstats.sh /opt/cluster/
 RUN chmod +x /opt/cluster/*.sh && ln -s /opt/llama/bin/ggml-rpc-server /opt/llama/bin/rpc-server
 ENV PATH=/opt/llama/bin:/opt/cluster:$PATH \

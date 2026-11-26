@@ -1,0 +1,152 @@
+{
+  "fecha_cotizacion": "2026-11-26",
+  "trm_cop_usd": 3630.89,
+  "trm_fuente": "TRM 26-nov-2026, https://www.colombia.com/actualidad/economia/precio-del-dolar-hoy-en-colombia-jueves-26-de-noviembre-de-2026-614259",
+  "energia_cop_kwh": 800,
+  "internet_cop_mes": 120000,
+  "horas_dia": 8,
+  "dias_anio": 250,
+  "mantenimiento_pct_capex": 0.05,
+  "vida_util_anios": 5,
+  "anios_tco": 3,
+  "demanda": {
+    "req_dia": 500,
+    "tokens_salida_req": 300,
+    "tokens_prompt_req": 391
+  },
+  "capex_cluster": [
+    {
+      "item": "Master: Ryzen 7, 32 GB DDR5, 1 TB NVMe, RTX 3060 8 GB",
+      "cant": 1,
+      "precio": 4500000,
+      "fuente": "Anexo C del examen (precio de referencia; equipo ya existente)",
+      "potencia_w": 300
+    },
+    {
+      "item": "Worker: i5-4590, 16 GB DDR3, 512 GB SSD, GTX 1050 Ti 4 GB",
+      "cant": 3,
+      "precio": 1600000,
+      "fuente": "Anexo C del examen (precio de referencia; equipos ya existentes)",
+      "potencia_w": 150
+    },
+    {
+      "item": "Switch Gigabit 8 puertos",
+      "cant": 1,
+      "precio": 150000,
+      "fuente": "Anexo C del examen (precio de referencia)",
+      "potencia_w": 0
+    },
+    {
+      "item": "Cableado Cat6 + patch panel",
+      "cant": 1,
+      "precio": 120000,
+      "fuente": "Anexo C del examen (precio de referencia)",
+      "potencia_w": 0
+    },
+    {
+      "item": "UPS 1000 VA (APC Easy UPS BV1000, 600 W)",
+      "cant": 1,
+      "precio": 324000,
+      "fuente": "capitalcolombia.com, ficha APC BV1000, consultado 2026-11-26",
+      "potencia_w": 0
+    },
+    {
+      "item": "Mano de obra / ensamble",
+      "cant": 1,
+      "precio": 800000,
+      "fuente": "Anexo C del examen (precio de referencia)",
+      "potencia_w": 0
+    }
+  ],
+  "opcion_b_rtx4090": [
+    {
+      "item": "Estación base (Ryzen 7, 32 GB, 1 TB NVMe, fuente 1000 W) sin GPU",
+      "cant": 1,
+      "precio": 3500000,
+      "fuente": "Master del Anexo C (4.5 M) menos GPU RTX 3060 (~1.0 M) + fuente de 1000 W; estimado"
+    },
+    {
+      "item": "GPU NVIDIA RTX 4090 24 GB",
+      "cant": 1,
+      "precio": 7800000,
+      "fuente": "stackpc.com.co, NVIDIA RTX 4090 24GB, consultado 2026-11-26"
+    },
+    {
+      "item": "UPS 1000 VA / 700 W online (Forza EOS FDC-RT1000VA)",
+      "cant": 1,
+      "precio": 899000,
+      "fuente": "exito.com, Forza EOS FDC-RT1000VA, consultado 2026-11-26"
+    },
+    {
+      "item": "Mano de obra / instalación",
+      "cant": 1,
+      "precio": 300000,
+      "fuente": "estimado"
+    }
+  ],
+  "opcion_b_potencia_w": 550,
+  "opcion_b_rtx4090_bw_gbs": 1008,
+  "upgrades": {
+    "gpu_3060_12gb": {
+      "desc": "Cambiar la RTX 3060 8 GB del master por una RTX 3060 12 GB (el modelo cabe entero en el master)",
+      "precio": 1750000,
+      "fuente": "listado.mercadolibre.com.co/rtx-3060-12gb, desde 1 750 000, consultado 2026-11-26"
+    },
+    "switch_10g": {
+      "desc": "Switch 10 GbE 8 puertos (MikroTik CRS312) + 4 NIC 10 GbE",
+      "precio": 4600000,
+      "fuente": "MikroTik CRS312-4C+8XG ~14 309 MXN (cyberpuerta.mx) convertido + importación, NIC ~350 000 c/u; estimado"
+    },
+    "ram_master": {
+      "desc": "RAM del master 32 -> 64 GB DDR5",
+      "precio": 600000,
+      "fuente": "estimado"
+    },
+    "nvme_workers": {
+      "desc": "NVMe 512 GB en cada worker (3)",
+      "precio": 750000,
+      "fuente": "estimado (250 000 c/u)"
+    }
+  },
+  "apis": [
+    {
+      "proveedor": "DeepSeek V4 Flash (tarifa hora pico)",
+      "usd_in": 0.3,
+      "usd_out": 1.2,
+      "fuente": "https://www.morphllm.com/deepseek-api (nov-2026)"
+    },
+    {
+      "proveedor": "OpenAI GPT-5 mini",
+      "usd_in": 0.25,
+      "usd_out": 2.0,
+      "fuente": "https://www.usagepricing.com/ai-token-pricing/openai/gpt-5-mini (nov-2026)"
+    },
+    {
+      "proveedor": "Anthropic Claude Haiku 5.5",
+      "usd_in": 0.1,
+      "usd_out": 0.5,
+      "fuente": "https://pricepertoken.com/pricing-page/model/anthropic-claude-haiku-5.5 (nov-2026)"
+    }
+  ],
+  "almacenamiento": [
+    {
+      "tipo": "NVMe PCIe 3.0/4.0",
+      "bw_mbs": 3500,
+      "cop_gb": 280,
+      "ref": "SSD NVMe 1 TB ~280 000 COP"
+    },
+    {
+      "tipo": "SSD SATA",
+      "bw_mbs": 550,
+      "cop_gb": 360,
+      "ref": "SSD SATA 512 GB ~185 000 COP"
+    },
+    {
+      "tipo": "HDD 7200 rpm",
+      "bw_mbs": 160,
+      "cop_gb": 90,
+      "ref": "HDD 2 TB ~180 000 COP"
+    }
+  ],
+  "rtx3060_bw_nominal_gbs": 360
+}
