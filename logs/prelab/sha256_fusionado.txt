@@ -1,0 +1,1 @@
+52c5bf1406d31fd335a9d18154071c8d29d74680e13af45bb76543b4ddd5dbf1  qwen2.5-7b-instruct-q8_0.gguf (fusionado con llama-gguf-split --merge, 8098525184 bytes)

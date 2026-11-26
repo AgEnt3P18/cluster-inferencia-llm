@@ -1,0 +1,4 @@
+qwen2.5-7b-instruct-q8_0-00001-of-00003.gguf size=3980069248 time=191.661407 speed_Bps=20766148
+qwen2.5-7b-instruct-q8_0-00002-of-00003.gguf size=3942935680 time=375.124899 speed_Bps=10510994
+qwen2.5-7b-instruct-q8_0-00003-of-00003.gguf size=175520480 time=10.977089 speed_Bps=15989710
+2026-11-26T07:01:36Z
