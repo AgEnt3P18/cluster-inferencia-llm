@@ -1,0 +1,79 @@
+# Clúster de inferencia LLM: 1 master (GPU) + 3 workers (rpc-server, CPU) en 10.0.50.0/24
+# Variables (ver config.json / run_experiments.sh):
+#   TS   --tensor-split (orden de dispositivos: CUDA0 = master, RPC0 = worker-1, RPC1 = worker-2, RPC2 = worker-3)
+#   CTX  tamaño de contexto
+#   RPC  lista de workers
+#   KVT  tipo de la caché KV (f16 | q8_0)
+x-node: &node
+  image: cluster-llm:latest
+  cap_add: [NET_ADMIN]
+  volumes:
+    - models:/models:ro
+    - ../logs:/logs
+    - ./:/codigo:ro
+  networks:
+    cluster: {}
+
+services:
+  master:
+    <<: *node
+    container_name: master
+    hostname: master
+    networks:
+      cluster: { ipv4_address: 10.0.50.11 }
+    mem_limit: 16g
+    memswap_limit: 16g
+    ports: ["18080:8080"]   # en el host el 8080 ya estaba ocupado
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]
+    environment:
+      TS: ${TS:-1,1,1,1}
+      CTX: ${CTX:-4096}
+      RPC: ${RPC:-10.0.50.12:50052,10.0.50.13:50052,10.0.50.14:50052}
+      KVT: ${KVT:-f16}
+    command: /codigo/start_master.sh
+    depends_on: [worker-1, worker-2, worker-3]
+
+  worker-1: &worker
+    <<: *node
+    container_name: worker-1
+    hostname: worker-1
+    networks:
+      cluster: { ipv4_address: 10.0.50.12 }
+    mem_limit: 4g
+    memswap_limit: 4g
+    cpus: 4
+    environment:
+      CUDA_VISIBLE_DEVICES: ""
+    command: /codigo/start_worker.sh
+
+  worker-2:
+    <<: *worker
+    container_name: worker-2
+    hostname: worker-2
+    networks:
+      cluster: { ipv4_address: 10.0.50.13 }
+
+  worker-3:
+    <<: *worker
+    container_name: worker-3
+    hostname: worker-3
+    networks:
+      cluster: { ipv4_address: 10.0.50.14 }
+
+networks:
+  cluster:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.50.0/24
+
+volumes:
+  models:
+    external: true
+    name: llm_models

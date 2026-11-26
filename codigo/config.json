@@ -1,0 +1,108 @@
+{
+  "modelo": {
+    "archivo": "/models/qwen2.5-7b-instruct-q8_0.gguf",
+    "nombre": "Qwen2.5-7B-Instruct Q8_0",
+    "parametros": 7620000000.0,
+    "capas": 28,
+    "kv_heads": 4,
+    "head_dim": 128
+  },
+  "servidor": {
+    "temperature": 0,
+    "seed": 42,
+    "n_predict": 300,
+    "stream": true,
+    "cache_prompt": false,
+    "ignore_eos": true,
+    "parallel": 1,
+    "flash_attn": "on",
+    "load_mode": "none (sin mmap)",
+    "split_mode": "layer (pipeline)",
+    "fit": "off"
+  },
+  "nodos": {
+    "master": {
+      "ip": "10.0.50.11",
+      "mem_limit": "16g",
+      "gpu": "RTX 3060 (CUDA0)",
+      "rol": "llama-server + coordinador + shard GPU"
+    },
+    "worker-1": {
+      "ip": "10.0.50.12",
+      "mem_limit": "4g",
+      "cpus": 4,
+      "gpu": null,
+      "rol": "rpc-server (CPU)"
+    },
+    "worker-2": {
+      "ip": "10.0.50.13",
+      "mem_limit": "4g",
+      "cpus": 4,
+      "gpu": null,
+      "rol": "rpc-server (CPU)"
+    },
+    "worker-3": {
+      "ip": "10.0.50.14",
+      "mem_limit": "4g",
+      "cpus": 4,
+      "gpu": null,
+      "rol": "rpc-server (CPU)"
+    }
+  },
+  "orden_tensor_split": [
+    "CUDA0 (master)",
+    "RPC worker-1",
+    "RPC worker-2",
+    "RPC worker-3"
+  ],
+  "configs": {
+    "C1": {
+      "workers": 3,
+      "ctx": 2048,
+      "tensor_split": "1,1,1,1",
+      "kv_type": "f16",
+      "rpc": "10.0.50.12:50052,10.0.50.13:50052,10.0.50.14:50052",
+      "nota": "Línea base: reparto igual"
+    },
+    "C2": {
+      "workers": 3,
+      "ctx": 4096,
+      "tensor_split": "1,1,1,1",
+      "kv_type": "f16",
+      "rpc": "10.0.50.12:50052,10.0.50.13:50052,10.0.50.14:50052",
+      "nota": "Más contexto"
+    },
+    "C3": {
+      "workers": 2,
+      "ctx": 2048,
+      "tensor_split": "8,4,4",
+      "kv_type": "f16",
+      "rpc": "10.0.50.12:50052,10.0.50.13:50052",
+      "nota": "Menos nodos, reparto proporcional a la VRAM de referencia (8:4:4)"
+    },
+    "C4": {
+      "workers": 3,
+      "ctx": 4096,
+      "tensor_split": "8,4,4,4",
+      "kv_type": "q8_0",
+      "rpc": "10.0.50.12:50052,10.0.50.13:50052,10.0.50.14:50052",
+      "nota": "Proporcional a VRAM (8:4:4:4) + KV 8 bits"
+    },
+    "C5": {
+      "workers": 3,
+      "ctx": 4096,
+      "tensor_split": "7,1,1,1",
+      "kv_type": "q8_0",
+      "rpc": "10.0.50.12:50052,10.0.50.13:50052,10.0.50.14:50052",
+      "nota": "Proporcional al ancho de banda de memoria: 70 % en GPU (~5.7 GB < 8 GB de la RTX 3060 de referencia)"
+    },
+    "C6": {
+      "workers": 1,
+      "ctx": 4096,
+      "tensor_split": "5,1",
+      "kv_type": "q8_0",
+      "rpc": "10.0.50.12:50052",
+      "nota": "Mínimo de nodos: master (83 % en GPU, ~6.7 GB < 8 GB de referencia) + 1 worker; menos saltos RPC"
+    }
+  }
+}
