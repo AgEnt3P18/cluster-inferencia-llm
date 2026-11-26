@@ -1,0 +1,38 @@
+% Topología física (a) y pipeline lógico por token (b) — configuración C4 (--tensor-split 4,4,4,8)
+\begin{tikzpicture}
+% ---------- (a) topología física ----------
+\node[title, anchor=west] at (-2.4, 1.9) {(a) Topología física · red Docker 10.0.50.0/24};
+
+\node[host=muted, minimum width=3.3cm] (cli) at (0,0)
+  {\textbf{Cliente}\\[2pt]\footnotesize collect.py\\\footnotesize POST /completion\\\footnotesize mide TTFT y tok/s};
+\node[host=navy] (m) at (6.2,0)
+  {\textbf{\large master}\\[2pt]\footnotesize 10.0.50.11 · llama-server :8080\\\footnotesize RTX 3060 · mem\_limit 16 GB\\[2pt]
+   \footnotesize\textbf{capas 18–27 + salida}\\\footnotesize shard 3,06 GB en VRAM};
+\node[sw] (s) at (6.2,-3.0) {\textbf{switch}\\\scriptsize 1 Gbps (A) · 100 Mbps (B)};
+
+\foreach \i/\x/\ip/\cap in {1/0.6/12/0–5, 2/6.2/13/6–11, 3/11.8/14/12–17}{
+  \node[host=cyan] (w\i) at (\x,-6.0)
+    {\textbf{\large worker-\i}\\[2pt]\footnotesize 10.0.50.\ip\ · rpc-server :50052\\\footnotesize CPU 4 hilos · mem\_limit 4 GiB\\[2pt]
+     \footnotesize\textbf{capas \cap}\\\footnotesize shard 1,49 GB en RAM};
+  \draw[link] (s.south) -- ++(0,-0.75) -| (w\i.north);
+}
+\draw[link] (m.south) -- node[tag, right=2pt] {eth0 · tc netem en egress} (s.north);
+\draw[flow] ([yshift=5mm]cli.east) -- node[tag, above] {prompt} ([yshift=5mm]m.west);
+\draw[flow, draw=lime!70!black] ([yshift=-5mm]m.west) -- node[tag, below] {tokens (stream)} ([yshift=-5mm]cli.east);
+
+\node[warn, anchor=west] at (9.0,-2.5) {Cuello en red B:\\RTT × llamadas RPC por token};
+\node[warn, anchor=north] at (6.2,-7.6) {Cuello principal: cada worker lee su shard de DRAM a 36,9 GB/s; la GPU lee a 312,9 GB/s};
+
+% ---------- (b) pipeline lógico ----------
+\begin{scope}[yshift=-10.4cm]
+\node[title, anchor=west] at (-2.4, 1.35) {(b) Recorrido de un token (pipeline por capas, \texttt{-sm layer})};
+\node[stage=muted] (p1) at (-0.8,0) {\textbf{master CPU}\\\footnotesize embeddings\\\scriptsize\color{muted}lookup de 1 fila};
+\node[stage=cyan]  (p2) [right=1.05cm of p1] {\textbf{worker-1}\\\footnotesize capas 0–5\\\scriptsize\color{muted}$\approx$\,40 ms/token};
+\node[stage=cyan]  (p3) [right=1.05cm of p2] {\textbf{worker-2}\\\footnotesize capas 6–11\\\scriptsize\color{muted}$\approx$\,40 ms/token};
+\node[stage=cyan]  (p4) [right=1.05cm of p3] {\textbf{worker-3}\\\footnotesize capas 12–17\\\scriptsize\color{muted}$\approx$\,40 ms/token};
+\node[stage=navy]  (p5) [right=1.05cm of p4] {\textbf{master GPU}\\\footnotesize capas 18–27 + logits\\\scriptsize\color{muted}$\approx$\,10 ms/token};
+\foreach \a/\b in {p1/p2,p2/p3,p3/p4,p4/p5}{ \draw[flow] (\a) -- node[tag, above=1pt] {14 KB} (\b); }
+\foreach \n/\k in {p1/1,p2/2,p3/3,p4/4,p5/5}{ \node[badge] at (\n.north west) {\k}; }
+\draw[->, dashed, line width=1pt, draw=muted] (p5.south) -- ++(0,-1.0) -| node[tag, pos=0.25, below] {token siguiente} (p1.south);
+\end{scope}
+\end{tikzpicture}

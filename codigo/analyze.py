@@ -6,7 +6,6 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 LOGS = os.path.join(ROOT, "..", "logs")
@@ -306,43 +305,6 @@ def fig_coldwarm(table):
     return rows
 
 
-def fig_topologia(best, fname="fig_topologia.png"):
-    counts, w, out_dev = node_weights(best)
-    fig, ax = plt.subplots(figsize=(11, 5.2)); ax.set_xlim(0, 11); ax.set_ylim(0, 5.6); ax.axis("off")
-    def box(x, y, wd, h, title, body, col):
-        ax.add_patch(FancyBboxPatch((x, y), wd, h, boxstyle="round,pad=0.05", fc=col, ec="#0f172a", lw=1.2))
-        ax.text(x + wd / 2, y + h - .22, title, ha="center", va="top", fontsize=10, weight="bold")
-        ax.text(x + wd / 2, y + h - .55, body, ha="center", va="top", fontsize=7.6, linespacing=1.35)
-    box(.2, 3.5, 2.2, 1.7, "Cliente", "collect.py / app interna\nPOST /completion (stream)\nmide TTFT y tok/s", "#f1f5f9")
-    lay = layer_ranges(best)
-
-    mb = f"10.0.50.11 · llama-server :8080\nRTX 3060 (CUDA0), mem_limit 16 GB\nembeddings (CPU) + capas {lay[0][0]}–{lay[0][1]} + salida\nshard ≈ {w[0]/1e9:.2f} GB en VRAM"
-    box(3.2, 3.3, 3.0, 2.0, "master (coordinador + última etapa)", mb, "#dbeafe")
-    box(7.3, 4.0, 1.25, 0.9, "switch", "1 GbE (A) / 100 Mbps (B)\nnetem en egress", "#fef9c3")
-    xs = [1.2, 4.6, 8.0]
-    for i in range(3):
-        used = i + 1 < len(counts)
-        if used:
-            body = f"10.0.50.{12+i} · rpc-server :50052\nCPU 4 hilos, mem_limit 4 GiB\ncapas {lay[i+1][0]}–{lay[i+1][1]}" + f"\nshard ≈ {w[i+1]/1e9:.2f} GB en RAM"
-            col = "#dcfce7"
-        else:
-            body = f"10.0.50.{12+i} · rpc-server :50052\nsin capas en {best}\n(en reserva)"; col = "#f3f4f6"
-        box(xs[i], .3, 2.6, 1.6, f"worker-{i+1} (etapa {i+1})" if used else f"worker-{i+1}", body, col)
-    arr = lambda p, q2, col="#0f172a", txt=None, **k: (ax.add_patch(FancyArrowPatch(p, q2, arrowstyle="-|>", mutation_scale=12, color=col, lw=1.4, **k)),
-                                                       txt and ax.text((p[0]+q2[0])/2, (p[1]+q2[1])/2, txt, fontsize=7.2, color=col, ha="center", backgroundcolor="white"))
-    arr((2.4, 4.5), (3.2, 4.5), txt="prompt")
-    arr((3.2, 4.0), (2.4, 4.0), col="#16a34a", txt="tokens")
-    ax.add_patch(FancyArrowPatch((6.2, 4.45), (7.3, 4.45), arrowstyle="<|-|>", mutation_scale=12, color="#0f172a", lw=1.4))
-    ax.text(6.75, 4.7, "activaciones FP32\n14 KB/token/salto", fontsize=7.2, ha="center")
-    for i in range(3):
-        if i + 1 < len(counts):
-            ax.add_patch(FancyArrowPatch((7.75, 4.0), (xs[i] + 1.3, 1.9), arrowstyle="<|-|>", mutation_scale=12, color="#2563eb", lw=1.4))
-    ax.text(9.4, 3.05, "Pipeline por capas (split-mode layer):\nmaster (embeddings, CPU) → w1 → … →\nmaster GPU (últimas capas + logits).\nCuellos esperados: etapa CPU del worker\n(BW de DRAM) y RTT × llamadas RPC/token.",
-            ha="center", va="center", fontsize=7.6, style="italic", color="#7f1d1d")
-    ax.set_title(f"Topología del clúster (red Docker 10.0.50.0/24) — configuración {best}: --tensor-split {CFG[best]['tensor_split']}", fontsize=10)
-    fig.tight_layout(); fig.savefig(os.path.join(FIG, fname)); plt.close(fig)
-
-
 def main():
     recs = load_records()
     table = summarize(recs)
@@ -355,7 +317,8 @@ def main():
     best = max(ok, key=lambda r: r["tps_med"])["config"] if ok else max(table, key=lambda r: r["tps_med"])["config"]
     json.dump({"best": best}, open(os.path.join(OUT, "ganadora.json"), "w"))
     print("ganadora:", best)
-    fig_ab(table); fig_series(best); fig_memoria(best, table); fig_coldwarm(table); fig_topologia(best); fig_topologia("C4", "fig_topologia_C4.png")
+    fig_ab(table); fig_series(best); fig_memoria(best, table); fig_coldwarm(table)
+    # Los diagramas de topología se dibujan en TikZ: codigo/diagramas/ (fig_topologia*.png)
     rf = roofline(table)
     for c, v in rf["configs"].items():
         print(f"roofline {c}: techo {v['techo_tok_s']:.2f} tok/s  eta_A {v['eta_A']:.2f}  eta_B {v['eta_B']:.2f}  etapas {v['etapas_ms']}")

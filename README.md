@@ -15,7 +15,7 @@ con `llama.cpp` en modo RPC, sobre una red Docker `10.0.50.0/24` con emulación 
 | `costos.xlsx` | CAPEX, OPEX, TCO, comparación, break-even y sensibilidad (con fórmulas) |
 | `codigo/` | `Dockerfile`, `docker-compose.yml`, `tc.sh`, `collect.py`, `config.json` y scripts de orquestación y análisis |
 | `logs/` | `metricas.jsonl` crudo y evidencias de cada corrida (llama-server, rpc-server, nvidia-smi, docker stats/inspect, tc, ping, iperf3, OOM) |
-| `figuras/` | Figuras del informe (generadas por `codigo/analyze.py` y `codigo/costos.py`) |
+| `figuras/` | Figuras del informe (gráficas de `codigo/analyze.py` y `codigo/costos.py`; diagramas de topología en TikZ, fuente en `codigo/diagramas/`) |
 
 ## Hardware y versiones
 
@@ -108,6 +108,7 @@ Referencia de GPU única (modelo completo en la RTX 3060 12 GB del host): 37.05 
 
 ## Declaración de uso de IA
 
-Se usó un asistente de IA de programación para escribir y depurar los scripts (`collect.py`, `analyze.py`,
-`costos.py`, orquestación) y para apoyar la redacción. Todas las mediciones se ejecutaron en el hardware descrito y
-cada número del informe sale de `logs/metricas.jsonl` y de los archivos de `logs/`.
+Usé Claude Code (Anthropic) como asistente de programación, a modo de copiloto: me ayudó a escribir y depurar los
+scripts de orquestación, medición y análisis (`run_experiments.sh`, `collect.py`, `analyze.py`, `costos.py`) y a revisar
+la redacción. El montaje del clúster, la ejecución de las mediciones, la interpretación de los resultados y las decisiones
+de diseño y de costos son míos. Cada número del informe sale de `logs/metricas.jsonl` y de los archivos de `logs/`.

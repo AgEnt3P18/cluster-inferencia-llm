@@ -1,0 +1,10 @@
+% Recorrido de un token en la configuración ganadora C6 (--tensor-split 1,5)
+\begin{tikzpicture}
+\node[stage=muted] (p1) at (0,0) {\textbf{master CPU}\\\footnotesize embeddings\\\scriptsize\color{muted}lookup de 1 fila};
+\node[stage=cyan]  (p2) [right=1.5cm of p1] {\textbf{worker-1}\\\footnotesize capas 0–4 · 1,24 GB RAM\\\scriptsize\color{muted}$\approx$\,34 ms/token};
+\node[stage=navy, minimum width=3.9cm]  (p3) [right=1.5cm of p2] {\textbf{master GPU}\\\footnotesize capas 5–27 + logits · 6,28 GB\\\scriptsize\color{muted}$\approx$\,20 ms/token};
+\foreach \a/\b in {p1/p2,p2/p3}{ \draw[flow] (\a) -- node[tag, above=1pt] {14 KB} (\b); }
+\foreach \n/\k in {p1/1,p2/2,p3/3}{ \node[badge] at (\n.north west) {\k}; }
+\draw[->, dashed, line width=1pt, draw=muted] (p3.south) -- ++(0,-0.8) -| node[tag, pos=0.25, below] {token siguiente} (p1.south);
+\node[idle, minimum width=2.6cm, minimum height=1.35cm, anchor=west] (w23) at ([xshift=1.0cm]p3.east) {\textbf{worker-2 y 3}\\\footnotesize en reserva};
+\end{tikzpicture}

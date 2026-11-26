@@ -1,0 +1,10 @@
+% Compila un diagrama suelto: pdflatex "\def\diagrama{topologia_C4}\input{render.tex}"
+\documentclass[border=8pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,tikz}
+\renewcommand{\familydefault}{\sfdefault}
+\input{estilo.tex}
+\begin{document}
+\input{\diagrama.tex}
+\end{document}

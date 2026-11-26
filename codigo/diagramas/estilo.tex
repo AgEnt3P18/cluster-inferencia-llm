@@ -1,0 +1,29 @@
+% Estilos TikZ compartidos por los diagramas de topología
+\usetikzlibrary{positioning,arrows.meta,calc,fit,backgrounds,shapes.misc}
+\definecolor{navy}{HTML}{2B4494}
+\definecolor{cyan}{HTML}{2BB5E3}
+\definecolor{lime}{HTML}{8DBF2E}
+\definecolor{ink}{HTML}{1A2547}
+\definecolor{muted}{HTML}{64748B}
+\definecolor{alert}{HTML}{C0392B}
+\tikzset{
+  >={Stealth[length=2.6mm]},
+  every node/.style={font=\sffamily},
+  host/.style={rounded corners=6pt, draw=#1, line width=1.1pt, fill=#1!8, align=center,
+               minimum width=4.6cm, minimum height=2.5cm, inner sep=6pt, text=ink},
+  host/.default=navy,
+  idle/.style={rounded corners=6pt, draw=muted!60, dashed, line width=1pt, fill=muted!5, align=center,
+               minimum width=4.6cm, minimum height=2.5cm, inner sep=6pt, text=muted},
+  sw/.style={rounded corners=4pt, draw=lime!80!black, line width=1.1pt, fill=lime!15, align=center,
+             minimum width=3.4cm, minimum height=1.1cm, text=ink},
+  title/.style={font=\sffamily\bfseries\large, text=navy},
+  link/.style={line width=1.6pt, draw=cyan!80!black},
+  flow/.style={->, line width=1.2pt, draw=ink},
+  tag/.style={font=\sffamily\scriptsize, fill=white, inner sep=2pt, text=muted},
+  badge/.style={circle, fill=navy, text=white, font=\sffamily\bfseries\small, inner sep=1.5pt, minimum size=5.5mm},
+  warn/.style={rounded corners=3pt, fill=alert!10, draw=alert!70, text=alert!90!black, font=\sffamily\scriptsize,
+               align=center, inner sep=3pt},
+  stage/.style={rounded corners=5pt, draw=#1, line width=1pt, fill=#1!10, align=center, text=ink,
+                minimum width=2.75cm, minimum height=1.35cm, font=\sffamily\small},
+  stage/.default=navy,
+}

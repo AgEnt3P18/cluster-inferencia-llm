@@ -1,0 +1,36 @@
+% Topología física (a) y pipeline lógico por token (b) — configuración ganadora C6 (--tensor-split 1,5)
+\begin{tikzpicture}
+\node[title, anchor=west] at (-2.4, 1.9) {(a) Topología física · configuración ganadora C6};
+
+\node[host=muted, minimum width=3.3cm] (cli) at (0,0)
+  {\textbf{Cliente}\\[2pt]\footnotesize collect.py\\\footnotesize POST /completion\\\footnotesize mide TTFT y tok/s};
+\node[host=navy] (m) at (6.2,0)
+  {\textbf{\large master}\\[2pt]\footnotesize 10.0.50.11 · llama-server :8080\\\footnotesize RTX 3060 · mem\_limit 16 GB\\[2pt]
+   \footnotesize\textbf{capas 5–27 + salida}\\\footnotesize shard 6,28 GB en VRAM (de 8 GB)};
+\node[sw] (s) at (6.2,-3.0) {\textbf{switch}\\\scriptsize 1 Gbps (A) · 100 Mbps (B)};
+
+\node[host=cyan] (w1) at (0.6,-6.0)
+  {\textbf{\large worker-1}\\[2pt]\footnotesize 10.0.50.12 · rpc-server :50052\\\footnotesize CPU 4 hilos · mem\_limit 4 GiB\\[2pt]
+   \footnotesize\textbf{capas 0–4}\\\footnotesize shard 1,24 GB en RAM};
+\node[idle] (w2) at (6.2,-6.0) {\textbf{\large worker-2}\\[2pt]\footnotesize 10.0.50.13\\\footnotesize en reserva (sin capas)};
+\node[idle] (w3) at (11.8,-6.0) {\textbf{\large worker-3}\\[2pt]\footnotesize 10.0.50.14\\\footnotesize en reserva (sin capas)};
+\draw[link] (s.south) -- ++(0,-0.75) -| (w1.north);
+\draw[link, draw=muted!50, dashed] (s.south) -- (w2.north);
+\draw[link, draw=muted!50, dashed] (s.south) -- ++(0,-0.75) -| (w3.north);
+\draw[link] (m.south) -- node[tag, right=2pt] {eth0 · tc netem en egress} (s.north);
+\draw[flow] ([yshift=5mm]cli.east) -- node[tag, above] {prompt} ([yshift=5mm]m.west);
+\draw[flow, draw=lime!70!black] ([yshift=-5mm]m.west) -- node[tag, below] {tokens (stream)} ([yshift=-5mm]cli.east);
+
+\node[warn, anchor=west] at (9.0,-2.5) {Un solo salto de red:\\22 MB por petición (C1: 68 MB)};
+\node[warn, anchor=north] at (6.2,-7.6) {Solo el 17\,\% de los pesos se lee desde DRAM de CPU (C1: 75\,\%) $\Rightarrow$ 16,1 tok/s};
+
+\begin{scope}[yshift=-10.4cm]
+\node[title, anchor=west] at (-2.4, 1.35) {(b) Recorrido de un token en C6};
+\node[stage=muted] (p1) at (1.2,0) {\textbf{master CPU}\\\footnotesize embeddings\\\scriptsize\color{muted}lookup de 1 fila};
+\node[stage=cyan]  (p2) [right=1.4cm of p1] {\textbf{worker-1}\\\footnotesize capas 0–4\\\scriptsize\color{muted}$\approx$\,34 ms/token};
+\node[stage=navy, minimum width=3.6cm]  (p3) [right=1.4cm of p2] {\textbf{master GPU}\\\footnotesize capas 5–27 + logits\\\scriptsize\color{muted}$\approx$\,20 ms/token};
+\foreach \a/\b in {p1/p2,p2/p3}{ \draw[flow] (\a) -- node[tag, above=1pt] {14 KB} (\b); }
+\foreach \n/\k in {p1/1,p2/2,p3/3}{ \node[badge] at (\n.north west) {\k}; }
+\draw[->, dashed, line width=1pt, draw=muted] (p3.south) -- ++(0,-1.0) -| node[tag, pos=0.25, below] {token siguiente} (p1.south);
+\end{scope}
+\end{tikzpicture}
