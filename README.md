@@ -15,6 +15,7 @@ con `llama.cpp` en modo RPC, sobre una red Docker `10.0.50.0/24` con emulación 
 | `costos.xlsx` | CAPEX, OPEX, TCO, comparación, break-even y sensibilidad (con fórmulas) |
 | `codigo/` | `Dockerfile`, `docker-compose.yml`, `tc.sh`, `collect.py`, `config.json` y scripts de orquestación y análisis |
 | `logs/` | `metricas.jsonl` crudo y evidencias de cada corrida (llama-server, rpc-server, nvidia-smi, docker stats/inspect, tc, ping, iperf3, OOM) |
+| `video.mp4` | Defensa oral en video |
 | `figuras/` | Figuras del informe (gráficas de `codigo/analyze.py` y `codigo/costos.py`; diagramas de topología en TikZ, fuente en `codigo/diagramas/`) |
 
 ## Hardware y versiones
