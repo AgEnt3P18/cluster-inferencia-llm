@@ -100,6 +100,7 @@ Referencia de GPU única (modelo completo en la RTX 3060 12 GB del host): 37.05 
 |---|---|
 | El target `rpc-server` no existe en esta versión de llama.cpp (ahora es `ggml-rpc-server`) | Compilar todo y crear el enlace `rpc-server -> ggml-rpc-server` en el `Dockerfile` |
 | Workers sin GPU no arrancaban con CUDA enlazado estáticamente | `-DGGML_BACKEND_DL=ON`: el backend CUDA se carga dinámicamente y los workers caen al backend CPU |
+| `recursos/prompt.txt` no estaba disponible al hacer las mediciones | Se usó un prompt propio equivalente (`codigo/prompt.txt`: análisis financiero en español, 212 palabras, 391 tokens), fijo en las 48 corridas. El prompt oficial, adjuntado después, está en `codigo/prompt_oficial_recursos.txt` (199 palabras); para repetir con él: `collect.py --prompt /codigo/prompt_oficial_recursos.txt`. Al ser más corto bajaría algo el TTFT; los tok/s de generación no dependen del texto, así que el ranking no cambia |
 | El puerto 8080 del host estaba ocupado | Publicar el master en `18080:8080` |
 | Copiar el modelo por bind-mount de Windows es lento | Volumen Docker `llm_models` (ext4 dentro de la VM) |
 | El intento de OOM en el master con un lastre de VRAM no falla en Windows: WDDM virtualiza la VRAM y desaloja el lastre | Se documenta en `logs/oom/oom_master_nota.txt`; la imposibilidad del master de 8 GB se demuestra por cálculo y el OOM exigido (worker) sí se reproduce |
